@@ -492,3 +492,25 @@ What an **armed-Win10 personality** must reproduce (design input for the constan
 * Real-system confirmation (nothing here was run on Windows): default `GetThemeAppProperties`=3, `CloseThemeData(NULL)`=E_HANDLE, `OpenThemeData(h,L"")`=0x80070057, `GetThemeSysInt(NULL,...)`=E_HANDLE, `IsAppThemed` ignoring `SetThemeAppProperties(0)`, ordering of E_POINTER vs E_HANDLE in `GetThemePartSize` vs `GetThemeColor`. All are stated from decomp; they are the highest-value first probes.
 * Behaviour of the ALPC server side (themeservice) is outside this DLL and not in the corpus modules listed; only the client protocol (op codes) is documented.
 * Whether `EnableTheming` is truly dead on every path: ordinal 36 is the same RVA; no other caller exists in the 837 functions read.
+
+## Verification (adversarial re-check)
+
+Re-fetched from `http://docker1.dev.moonlightcompanies.com:8765/api/function/uxtheme/<name>/decomp` and compared with the text above. No errors found, no edits needed to the claims. Checked:
+
+* `CAppInfo::CAppInfo @0x37ac`: `*(this+0x20) = 3`. Default app flags are 3 (CONFIRMED, from decomp only).
+* `SetThemeAppProperties @0x512b0`: stores `dwFlags` unmasked at `CAppInfo+0x20`. `SetLastError(0)` is called only when initialised (CONFIRMED).
+* `EnableTheming @0x4f7c0` (ordinals 36 and 129): returns 0 and only touches a CThemeApiHelper handle. It is a no-op. Wine `system.c:557-575` writes `ThemeActive=0` to the registry (CONFIRMED).
+* `OpenThemeDataExInternal @0x1a470`: invalid hwnd gives 0x80070006, NULL class list gives 0x80004003, in that order (CONFIRMED).
+* `_OpenThemeData @0x192c4`: the hook-state and `+0x24` gate, the flag gate (`>>1` unless flags&2), and the empty string giving 0x80070057 (CONFIRMED). The empty-string check comes after the flag gate (CONFIRMED).
+* `OpenThemeData @0x1b590` and `OpenThemeDataForDpi @0xb9e0`: the high-contrast gate leaves LastError untouched, and dpi above 0x1e0 (480) sets LastError 0x57 (CONFIRMED).
+* `GetThemeColor`: one body at 0x1cf80 serving ordinals 154 and 159 (GetThemeInt). A NULL output gives 0x80004003 (-0x7fffbffd) before the handle lookup (CONFIRMED). `GetThemeMetric @0x20980` has the same ordering (CONFIRMED).
+* `GetThemePartSize @0x14a20`: handle first, then psz NULL gives E_POINTER. For border-fill parts (type 1): TS_MIN = max(1, 2*border), TS_TRUE = 2*border+1, anything else = 0x80070057. Image parts go to `CImageFile::GetPartSize` (CONFIRMED). The handle slot is stride 0x28 and the generation is the high 16 bits (CONFIRMED).
+* `IsAppThemed @0x224b0` calls `IsAppThemedInternal @0x22670`, which calls `AppIsThemed` (hook state and `+0x24`) and `IsSystemThemeActive`. App flags are not consulted, so `SetThemeAppProperties(0)` does not change IsAppThemed (CONFIRMED).
+* `CloseThemeData @0x190f0` just returns `CRenderList::CloseRenderObject`. The CloseThemeData(NULL)=E_HANDLE claim stays INFERENCE (not read in the CloseRenderObject body).
+* Ordinals from the exports API: 133 is `AllowDarkModeForWindow`, 135 `SetPreferredAppMode`, 132 `ShouldAppsUseDarkMode`, 136 `FlushMenuThemes`, 137 `IsDarkModeAllowedForWindow`, 138 `ShouldSystemUseDarkMode`, 139 `IsDarkModeAllowedForApp`. Of 193 exports, 108 are ordinal-only and 34 are SHUNIMPL forwarders (all CONFIRMED by script).
+* `GetThemeSizeId @0x523c8` gives 0x4b2..0x4b9 (1202..1209) for SM ids 2, 3, 0x1e, 0x1f, 0x34..0x37, and 0x4b1 (1201) for 0x20/0x21. The ids match `vssym32.h` (1201..1210; `TMT_FLATMENUS`=1001; `TMT_CSSNAME`=1401..`TMT_ALIAS`=1404; `TMT_SCROLLBAR`=1601; fonts 801+). SM_CXPADDEDBORDER(92)->1210 was not re-read (UNVERIFIED).
+* comctl32 `Header_NewFont`: `GetThemeTextExtent(..., 1, 0, L"M", -1, 0x800, ...)` with a `GetTextExtentPointW(L"...")` fallback (CONFIRMED).
+
+Not re-verified (still as the author labelled them): the property-record byte layout, the ALPC opcodes, the process-name exclusion list, buffered-paint cbSize values, and the DarkMode_ app-name mapping. Treat these as UNVERIFIED until a live Win10 probe.
+
+Note on `OpenNcThemeDataInternal` (section 5): the claim that a NULL class list goes straight to `_OpenThemeData` and hits the empty check is consistent with `_OpenThemeData`, which returns 0x80070057 for NULL or empty. It is not E_POINTER on that path.
