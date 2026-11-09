@@ -1,0 +1,248 @@
+class,part,state,prop,esize,dpi,type,v1,v2,v3,v4,hr,relation,confidence,serve,source
+Header,1,1,PARTSIZE,TS_MIN,96,size,6,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:29 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/NORMAL"
+Header,1,1,PARTSIZE,TS_TRUE,96,size,6,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:30 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/NORMAL"
+Header,1,1,PARTSIZE,TS_DRAW,96,size,6,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:31 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/NORMAL"
+Header,1,1,TMT_IMAGECOUNT,,96,int,12,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:35 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/NORMAL"
+Header,1,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:39 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/NORMAL"
+Header,1,1,TMT_SIZINGMARGINS,,96,margins,2,3,9,14,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:40 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/NORMAL"
+Header,1,2,PARTSIZE,TS_MIN,96,size,6,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:44 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/HOT"
+Header,1,2,PARTSIZE,TS_TRUE,96,size,6,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:45 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/HOT"
+Header,1,2,PARTSIZE,TS_DRAW,96,size,6,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:46 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/HOT"
+Header,1,2,TMT_IMAGECOUNT,,96,int,12,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:50 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/HOT"
+Header,1,2,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:54 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/HOT"
+Header,1,2,TMT_SIZINGMARGINS,,96,margins,2,3,9,14,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:55 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEM/HOT"
+Header,2,1,PARTSIZE,TS_MIN,96,size,3,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:59 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEMLEFT/1"
+Header,2,1,PARTSIZE,TS_TRUE,96,size,3,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:60 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEMLEFT/1"
+Header,2,1,PARTSIZE,TS_DRAW,96,size,3,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:61 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEMLEFT/1"
+Header,2,1,TMT_IMAGECOUNT,,96,int,2,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:65 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEMLEFT/1"
+Header,2,1,TMT_SIZINGMARGINS,,96,margins,2,0,9,14,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:70 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEMLEFT/1"
+Header,3,1,PARTSIZE,TS_MIN,96,size,3,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:74 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEMRIGHT/1"
+Header,3,1,PARTSIZE,TS_TRUE,96,size,3,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:75 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEMRIGHT/1"
+Header,3,1,PARTSIZE,TS_DRAW,96,size,3,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:76 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEMRIGHT/1"
+Header,3,1,TMT_IMAGECOUNT,,96,int,2,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:80 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEMRIGHT/1"
+Header,3,1,TMT_SIZINGMARGINS,,96,margins,2,0,9,14,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:85 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERITEMRIGHT/1"
+Header,4,1,PARTSIZE,TS_MIN,96,size,13,5,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:89 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERSORTARROW/UP"
+Header,4,1,PARTSIZE,TS_TRUE,96,size,13,5,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:90 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERSORTARROW/UP"
+Header,4,1,PARTSIZE,TS_DRAW,96,size,13,5,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:91 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERSORTARROW/UP"
+Header,4,1,TMT_IMAGECOUNT,,96,int,2,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:95 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERSORTARROW/UP"
+Header,4,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:99 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERSORTARROW/UP"
+Header,4,1,TMT_SIZINGMARGINS,,96,margins,2,0,9,14,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:100 (Wine 11.0 Proton run, 96 dpi, NOT Win10) HP_HEADERSORTARROW/UP"
+Button,1,1,PARTSIZE,TS_MIN,96,size,22,23,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:105 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_PUSHBUTTON/NORMAL"
+Button,1,1,PARTSIZE,TS_TRUE,96,size,22,23,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:106 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_PUSHBUTTON/NORMAL"
+Button,1,1,PARTSIZE,TS_DRAW,96,size,22,23,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:107 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_PUSHBUTTON/NORMAL"
+Button,1,1,TMT_IMAGECOUNT,,96,int,6,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:111 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_PUSHBUTTON/NORMAL"
+Button,1,1,TMT_CONTENTMARGINS,,96,margins,3,3,3,3,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:115 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_PUSHBUTTON/NORMAL"
+Button,1,1,TMT_SIZINGMARGINS,,96,margins,8,8,8,8,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:116 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_PUSHBUTTON/NORMAL"
+Button,3,1,PARTSIZE,TS_MIN,96,size,13,13,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:120 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_CHECKBOX/UNCHK"
+Button,3,1,PARTSIZE,TS_TRUE,96,size,13,13,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:121 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_CHECKBOX/UNCHK"
+Button,3,1,PARTSIZE,TS_DRAW,96,size,13,13,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:122 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_CHECKBOX/UNCHK"
+Button,3,1,TMT_IMAGECOUNT,,96,int,20,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:126 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_CHECKBOX/UNCHK"
+Button,3,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:130 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_CHECKBOX/UNCHK"
+Button,3,1,TMT_SIZINGMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:131 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_CHECKBOX/UNCHK"
+Button,2,1,PARTSIZE,TS_MIN,96,size,13,13,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:135 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_RADIOBUTTON/UNCHK"
+Button,2,1,PARTSIZE,TS_TRUE,96,size,13,13,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:136 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_RADIOBUTTON/UNCHK"
+Button,2,1,PARTSIZE,TS_DRAW,96,size,13,13,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:137 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_RADIOBUTTON/UNCHK"
+Button,2,1,TMT_IMAGECOUNT,,96,int,8,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:141 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_RADIOBUTTON/UNCHK"
+Button,2,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:145 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_RADIOBUTTON/UNCHK"
+Button,2,1,TMT_SIZINGMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:146 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_RADIOBUTTON/UNCHK"
+Button,4,1,PARTSIZE,TS_MIN,96,size,22,20,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:150 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_GROUPBOX/NORMAL"
+Button,4,1,PARTSIZE,TS_TRUE,96,size,22,20,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:151 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_GROUPBOX/NORMAL"
+Button,4,1,PARTSIZE,TS_DRAW,96,size,22,20,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:152 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_GROUPBOX/NORMAL"
+Button,4,1,TMT_SIZINGMARGINS,,96,margins,5,5,5,5,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:161 (Wine 11.0 Proton run, 96 dpi, NOT Win10) BP_GROUPBOX/NORMAL"
+Tab,1,1,PARTSIZE,TS_MIN,96,size,5,19,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:166 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/NORMAL"
+Tab,1,1,PARTSIZE,TS_TRUE,96,size,5,19,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:167 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/NORMAL"
+Tab,1,1,PARTSIZE,TS_DRAW,96,size,5,19,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:168 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/NORMAL"
+Tab,1,1,TMT_BORDERSIZE,,96,int,0,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:171 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/NORMAL"
+Tab,1,1,TMT_IMAGECOUNT,,96,int,5,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:172 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/NORMAL"
+Tab,1,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:176 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/NORMAL"
+Tab,1,1,TMT_SIZINGMARGINS,,96,margins,2,2,6,6,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:177 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/NORMAL"
+Tab,1,3,PARTSIZE,TS_MIN,96,size,5,19,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:181 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/SELECTED"
+Tab,1,3,PARTSIZE,TS_TRUE,96,size,5,19,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:182 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/SELECTED"
+Tab,1,3,PARTSIZE,TS_DRAW,96,size,5,19,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:183 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/SELECTED"
+Tab,1,3,TMT_BORDERSIZE,,96,int,0,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:186 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/SELECTED"
+Tab,1,3,TMT_IMAGECOUNT,,96,int,5,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:187 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/SELECTED"
+Tab,1,3,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:191 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/SELECTED"
+Tab,1,3,TMT_SIZINGMARGINS,,96,margins,2,2,6,6,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:192 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_TABITEM/SELECTED"
+Tab,9,0,PARTSIZE,TS_MIN,96,size,48,48,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:196 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_PANE/0"
+Tab,9,0,PARTSIZE,TS_TRUE,96,size,48,48,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:197 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_PANE/0"
+Tab,9,0,PARTSIZE,TS_DRAW,96,size,48,48,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:198 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_PANE/0"
+Tab,9,0,TMT_BORDERSIZE,,96,int,0,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:201 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_PANE/0"
+Tab,9,0,TMT_IMAGECOUNT,,96,int,1,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:202 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_PANE/0"
+Tab,9,0,TMT_SIZINGMARGINS,,96,margins,2,4,2,4,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:207 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_PANE/0"
+Tab,10,0,PARTSIZE,TS_MIN,96,size,10,600,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:211 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_BODY/0"
+Tab,10,0,PARTSIZE,TS_TRUE,96,size,10,600,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:212 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_BODY/0"
+Tab,10,0,PARTSIZE,TS_DRAW,96,size,10,600,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:213 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_BODY/0"
+Tab,10,0,TMT_BORDERSIZE,,96,int,0,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:216 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TABP_BODY/0"
+ListView,1,1,PARTSIZE,TS_MIN,96,size,2,2,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:227 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_LISTITEM/NORMAL"
+ListView,1,1,PARTSIZE,TS_TRUE,96,size,3,3,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:228 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_LISTITEM/NORMAL"
+ListView,1,1,PARTSIZE,TS_DRAW,96,size,3,3,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:229 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_LISTITEM/NORMAL"
+ListView,1,1,TMT_BORDERSIZE,,96,int,1,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:232 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_LISTITEM/NORMAL"
+ListView,3,0,PARTSIZE,TS_MIN,96,size,2,2,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:242 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_LISTDETAIL/0"
+ListView,3,0,PARTSIZE,TS_TRUE,96,size,3,3,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:243 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_LISTDETAIL/0"
+ListView,3,0,PARTSIZE,TS_DRAW,96,size,3,3,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:244 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_LISTDETAIL/0"
+ListView,3,0,TMT_BORDERSIZE,,96,int,1,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:247 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_LISTDETAIL/0"
+ListView,5,0,PARTSIZE,TS_MIN,96,size,2,2,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:257 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_EMPTYTEXT/0"
+ListView,5,0,PARTSIZE,TS_TRUE,96,size,3,3,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:258 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_EMPTYTEXT/0"
+ListView,5,0,PARTSIZE,TS_DRAW,96,size,3,3,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:259 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_EMPTYTEXT/0"
+ListView,5,0,TMT_BORDERSIZE,,96,int,1,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:262 (Wine 11.0 Proton run, 96 dpi, NOT Win10) LVP_EMPTYTEXT/0"
+ScrollBar,1,1,PARTSIZE,TS_MIN,96,size,17,17,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:273 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_ARROWBTN/UPNORMAL"
+ScrollBar,1,1,PARTSIZE,TS_TRUE,96,size,17,17,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:274 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_ARROWBTN/UPNORMAL"
+ScrollBar,1,1,PARTSIZE,TS_DRAW,96,size,17,17,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:275 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_ARROWBTN/UPNORMAL"
+ScrollBar,1,1,TMT_IMAGECOUNT,,96,int,20,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:279 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_ARROWBTN/UPNORMAL"
+ScrollBar,1,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:283 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_ARROWBTN/UPNORMAL"
+ScrollBar,1,1,TMT_SIZINGMARGINS,,96,margins,8,8,8,8,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:284 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_ARROWBTN/UPNORMAL"
+ScrollBar,3,1,PARTSIZE,TS_MIN,96,size,17,11,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:288 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_THUMBBTNVERT/NORMAL"
+ScrollBar,3,1,PARTSIZE,TS_TRUE,96,size,17,11,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:289 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_THUMBBTNVERT/NORMAL"
+ScrollBar,3,1,PARTSIZE,TS_DRAW,96,size,17,11,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:290 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_THUMBBTNVERT/NORMAL"
+ScrollBar,3,1,TMT_IMAGECOUNT,,96,int,5,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:294 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_THUMBBTNVERT/NORMAL"
+ScrollBar,3,1,TMT_CONTENTMARGINS,,96,margins,0,0,4,4,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:298 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_THUMBBTNVERT/NORMAL"
+ScrollBar,3,1,TMT_SIZINGMARGINS,,96,margins,8,8,5,5,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:299 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SBP_THUMBBTNVERT/NORMAL"
+Edit,1,1,PARTSIZE,TS_MIN,96,size,2,2,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:304 (Wine 11.0 Proton run, 96 dpi, NOT Win10) EP_EDITTEXT/NORMAL"
+Edit,1,1,PARTSIZE,TS_TRUE,96,size,3,3,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:305 (Wine 11.0 Proton run, 96 dpi, NOT Win10) EP_EDITTEXT/NORMAL"
+Edit,1,1,PARTSIZE,TS_DRAW,96,size,3,3,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:306 (Wine 11.0 Proton run, 96 dpi, NOT Win10) EP_EDITTEXT/NORMAL"
+Edit,1,1,TMT_BORDERSIZE,,96,int,1,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:309 (Wine 11.0 Proton run, 96 dpi, NOT Win10) EP_EDITTEXT/NORMAL"
+ComboBox,1,1,PARTSIZE,TS_MIN,96,size,7,21,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:320 (Wine 11.0 Proton run, 96 dpi, NOT Win10) CP_DROPDOWNBUTTON/NORMAL"
+ComboBox,1,1,PARTSIZE,TS_TRUE,96,size,7,21,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:321 (Wine 11.0 Proton run, 96 dpi, NOT Win10) CP_DROPDOWNBUTTON/NORMAL"
+ComboBox,1,1,PARTSIZE,TS_DRAW,96,size,7,21,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:322 (Wine 11.0 Proton run, 96 dpi, NOT Win10) CP_DROPDOWNBUTTON/NORMAL"
+ComboBox,1,1,TMT_BORDERSIZE,,96,int,1,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:325 (Wine 11.0 Proton run, 96 dpi, NOT Win10) CP_DROPDOWNBUTTON/NORMAL"
+ComboBox,1,1,TMT_IMAGECOUNT,,96,int,4,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:326 (Wine 11.0 Proton run, 96 dpi, NOT Win10) CP_DROPDOWNBUTTON/NORMAL"
+ComboBox,1,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:330 (Wine 11.0 Proton run, 96 dpi, NOT Win10) CP_DROPDOWNBUTTON/NORMAL"
+ComboBox,1,1,TMT_SIZINGMARGINS,,96,margins,3,3,7,8,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:331 (Wine 11.0 Proton run, 96 dpi, NOT Win10) CP_DROPDOWNBUTTON/NORMAL"
+Window,1,1,PARTSIZE,TS_MIN,96,size,66,29,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:336 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CAPTION/ACTIVE"
+Window,1,1,PARTSIZE,TS_TRUE,96,size,66,29,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:337 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CAPTION/ACTIVE"
+Window,1,1,PARTSIZE,TS_DRAW,96,size,66,29,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:338 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CAPTION/ACTIVE"
+Window,1,1,TMT_IMAGECOUNT,,96,int,2,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:342 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CAPTION/ACTIVE"
+Window,1,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:346 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CAPTION/ACTIVE"
+Window,1,1,TMT_SIZINGMARGINS,,96,margins,28,35,9,17,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:347 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CAPTION/ACTIVE"
+Window,18,1,PARTSIZE,TS_MIN,96,size,28,17,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:351 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CLOSEBUTTON/NORMAL"
+Window,18,1,PARTSIZE,TS_TRUE,96,size,28,17,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:352 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CLOSEBUTTON/NORMAL"
+Window,18,1,PARTSIZE,TS_DRAW,96,size,28,17,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:353 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CLOSEBUTTON/NORMAL"
+Window,18,1,TMT_IMAGECOUNT,,96,int,8,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:357 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CLOSEBUTTON/NORMAL"
+Window,18,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:361 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CLOSEBUTTON/NORMAL"
+Window,18,1,TMT_SIZINGMARGINS,,96,margins,2,2,7,7,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:362 (Wine 11.0 Proton run, 96 dpi, NOT Win10) WP_CLOSEBUTTON/NORMAL"
+Toolbar,1,1,PARTSIZE,TS_MIN,96,size,7,18,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:367 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TP_BUTTON/NORMAL"
+Toolbar,1,1,PARTSIZE,TS_TRUE,96,size,7,18,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:368 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TP_BUTTON/NORMAL"
+Toolbar,1,1,PARTSIZE,TS_DRAW,96,size,7,18,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:369 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TP_BUTTON/NORMAL"
+Toolbar,1,1,TMT_BORDERSIZE,,96,int,0,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:372 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TP_BUTTON/NORMAL"
+Toolbar,1,1,TMT_IMAGECOUNT,,96,int,8,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:373 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TP_BUTTON/NORMAL"
+Toolbar,1,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:377 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TP_BUTTON/NORMAL"
+Toolbar,1,1,TMT_SIZINGMARGINS,,96,margins,3,3,13,4,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:378 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TP_BUTTON/NORMAL"
+Rebar,3,0,PARTSIZE,TS_MIN,96,size,1,1,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:383 (Wine 11.0 Proton run, 96 dpi, NOT Win10) RP_BAND/0"
+Rebar,3,0,PARTSIZE,TS_TRUE,96,size,1,1,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:384 (Wine 11.0 Proton run, 96 dpi, NOT Win10) RP_BAND/0"
+Rebar,3,0,PARTSIZE,TS_DRAW,96,size,1,1,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:385 (Wine 11.0 Proton run, 96 dpi, NOT Win10) RP_BAND/0"
+Rebar,3,0,TMT_CONTENTMARGINS,,96,margins,2,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:393 (Wine 11.0 Proton run, 96 dpi, NOT Win10) RP_BAND/0"
+Rebar,3,0,TMT_SIZINGMARGINS,,96,margins,1,1,9,2,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:394 (Wine 11.0 Proton run, 96 dpi, NOT Win10) RP_BAND/0"
+Status,1,0,PARTSIZE,TS_MIN,96,size,3,15,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:399 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SP_PANE/0"
+Status,1,0,PARTSIZE,TS_TRUE,96,size,3,15,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:400 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SP_PANE/0"
+Status,1,0,PARTSIZE,TS_DRAW,96,size,3,15,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:401 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SP_PANE/0"
+Status,1,0,TMT_IMAGECOUNT,,96,int,1,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:405 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SP_PANE/0"
+Status,1,0,TMT_SIZINGMARGINS,,96,margins,0,2,2,2,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:410 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SP_PANE/0"
+TreeView,2,1,PARTSIZE,TS_MIN,96,size,9,9,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:415 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TVP_GLYPH/CLOSED"
+TreeView,2,1,PARTSIZE,TS_TRUE,96,size,9,9,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:416 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TVP_GLYPH/CLOSED"
+TreeView,2,1,PARTSIZE,TS_DRAW,96,size,9,9,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:417 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TVP_GLYPH/CLOSED"
+TreeView,2,1,TMT_BORDERSIZE,,96,int,1,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:420 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TVP_GLYPH/CLOSED"
+TreeView,2,1,TMT_IMAGECOUNT,,96,int,2,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:421 (Wine 11.0 Proton run, 96 dpi, NOT Win10) TVP_GLYPH/CLOSED"
+Menu,14,1,PARTSIZE,TS_MIN,96,size,7,7,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:431 (Wine 11.0 Proton run, 96 dpi, NOT Win10) MENU_POPUPITEM/NORMAL"
+Menu,14,1,PARTSIZE,TS_TRUE,96,size,7,7,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:432 (Wine 11.0 Proton run, 96 dpi, NOT Win10) MENU_POPUPITEM/NORMAL"
+Menu,14,1,PARTSIZE,TS_DRAW,96,size,7,7,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:433 (Wine 11.0 Proton run, 96 dpi, NOT Win10) MENU_POPUPITEM/NORMAL"
+Menu,14,1,TMT_BORDERSIZE,,96,int,20,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:436 (Wine 11.0 Proton run, 96 dpi, NOT Win10) MENU_POPUPITEM/NORMAL"
+Menu,14,1,TMT_IMAGECOUNT,,96,int,4,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:437 (Wine 11.0 Proton run, 96 dpi, NOT Win10) MENU_POPUPITEM/NORMAL"
+Menu,14,1,TMT_CONTENTMARGINS,,96,margins,0,0,1,1,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:441 (Wine 11.0 Proton run, 96 dpi, NOT Win10) MENU_POPUPITEM/NORMAL"
+Menu,14,1,TMT_SIZINGMARGINS,,96,margins,3,3,3,3,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:442 (Wine 11.0 Proton run, 96 dpi, NOT Win10) MENU_POPUPITEM/NORMAL"
+Progress,1,0,PARTSIZE,TS_MIN,96,size,2,2,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:447 (Wine 11.0 Proton run, 96 dpi, NOT Win10) PP_BAR/0"
+Progress,1,0,PARTSIZE,TS_TRUE,96,size,3,3,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:448 (Wine 11.0 Proton run, 96 dpi, NOT Win10) PP_BAR/0"
+Progress,1,0,PARTSIZE,TS_DRAW,96,size,3,3,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:449 (Wine 11.0 Proton run, 96 dpi, NOT Win10) PP_BAR/0"
+Progress,1,0,TMT_BORDERSIZE,,96,int,1,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:452 (Wine 11.0 Proton run, 96 dpi, NOT Win10) PP_BAR/0"
+Spin,1,1,PARTSIZE,TS_MIN,96,size,8,16,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:463 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SPNP_UP/NORMAL"
+Spin,1,1,PARTSIZE,TS_TRUE,96,size,8,16,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:464 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SPNP_UP/NORMAL"
+Spin,1,1,PARTSIZE,TS_DRAW,96,size,8,16,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:465 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SPNP_UP/NORMAL"
+Spin,1,1,TMT_BORDERSIZE,,96,int,1,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:468 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SPNP_UP/NORMAL"
+Spin,1,1,TMT_IMAGECOUNT,,96,int,4,,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:469 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SPNP_UP/NORMAL"
+Spin,1,1,TMT_CONTENTMARGINS,,96,margins,0,0,0,0,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:473 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SPNP_UP/NORMAL"
+Spin,1,1,TMT_SIZINGMARGINS,,96,margins,4,3,9,3,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:474 (Wine 11.0 Proton run, 96 dpi, NOT Win10) SPNP_UP/NORMAL"
+Header,5,0,PARTSIZE,TS_TRUE,96,size,3,24,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:24 (Wine 11.0 Proton run, 96 dpi, NOT Win10) _Header_InitTheme call tuple"
+Header,4,0,PARTSIZE,TS_TRUE,96,size,13,5,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:25 (Wine 11.0 Proton run, 96 dpi, NOT Win10) _Header_InitTheme call tuple"
+Header,7,0,PARTSIZE,TS_TRUE,96,size,8,21,,,0x00000000,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:26 (Wine 11.0 Proton run, 96 dpi, NOT Win10) _Header_InitTheme call tuple"
+Header,1,0,TMT_MINSIZE(3403),,96,position,,,,,0x80070490,,WINE-RUN,no,"03_wine_probe/out/proton_v6.txt:27 (Wine 11.0 Proton run, 96 dpi, NOT Win10) property ABSENT in Wine theme (E_PROP_ID_UNSUPPORTED); Win10 value UNKNOWN"
+Header,,,"HDM_LAYOUT.cy(text_cy=13..16,edge=2)",,96,layout,24,,,,,,ORACLE-REPORTED,test-only,"Win10 CC30 record: bb #1134 reply #16656 (laneg, 6 boots byte-identical), via docs/research/05_i7_current_state.md section 4.1; not re-read from the bb in this pass"
+Header,1,0,"min_height=max(PARTSIZE.TS_TRUE.cy, TMT_MINSIZE.y)",,96,derived,24,,,,,eq,ORACLE-INFERRED,yes,"Header_OnLayout 0x4b2a8: height=max(text_cy+2*edge, HD+0x160) when HD+0x130!=0 (01_consumers.md 4.1, 05 section 4.2). With Win10 result 24 > text arm (13..16 + 4 = 17..20) => HD+0x160 == 24. INFERENCE, composition (part-size vs MINSIZE) UNKNOWN"
+(sysmetric),,,COLOR_BTNFACE(15),,96,color,0x00F0F0F0,,,,,,ORACLE-REPORTED,no,"crates/w10-win32k-serverinfo/src/lib.rs:87-107 comment, bb #983 oracle run, via 05 section 3.2 (the only observed entry of the 31-colour table); GetThemeSysColor(NULL)=GetSysColor so not a theme row"
+Button,3,1,PARTSIZE,TS_DRAW,96,size,13,13,,,,eq,WINE-TESTED-ON-WINDOWS,pending,"wine dlls/uxtheme/tests/system.c:1219-1225 (test_GetThemePartSize: expected = MulDiv(13, dpi, 96) for BP_CHECKBOX/CBS_CHECKEDNORMAL(=5) TS_DRAW; the test is written to pass on real Windows). State 1 (UNCHECKEDNORMAL) differs from the tested state 5: image-strip frame size is per part in aero, assumption only"
+*,,,PARTSIZE.borderfill.TS_MIN,,,rule,"max(1,2*BORDERSIZE) square",,,,,,DECOMP,yes,GET /api/function/uxtheme/GetThemePartSize/decomp RVA 0x14a20 (02 section 6.1)
+*,,,PARTSIZE.borderfill.TS_TRUE,,,rule,2*BORDERSIZE+1 square,,,,,,DECOMP,yes,"same, RVA 0x14a20"
+*,,,PARTSIZE.borderfill.TS_DRAW,,,rule,E_INVALIDARG,,,,0x80070057,,DECOMP,yes,"same, RVA 0x14a20"
+*,,,PARTSIZE.image.TS_MIN,,,rule,"max(1,sum scaled CONTENTMARGINS) per axis",,,,,,DECOMP,yes,CImageFile::GetPartSize RVA 0x14edc (02 section 6.1)
+*,,,PARTSIZE.image.TS_TRUE,,,rule,"selected DIB frame cx,cy (DIBINFO+0xc/+0x10) unless true-size stretch",,,,,,DECOMP,yes,RVA 0x14edc; frame-vs-strip meaning NOT decoded (03 section 9 caveat)
+*,,,PARTSIZE.errors,,,rule,handle->E_HANDLE(0x80070006) then psz NULL->E_POINTER(0x80004003) then no part object->E_FAIL(0x80004005),,,,,,DECOMP,yes,RVA 0x14a20 (02 section 6.1)
+*,,,GETTHEMEPOSITION.miss,,,rule,0x80070490 (E_PROP_ID_UNSUPPORTED); pPoint NULL->0x80004003 before handle,,,,0x80070490,,DECOMP,yes,ExternalGetPosition 0x6b94 / GetThemePosition RVA 0x6af0 (05 section 1.3 correction)
+*,,,GETTHEMEMETRIC,,,rule,GetThemeColor-style lookup then ScaleThemeSize(hdc),,,,,,DECOMP,yes,02 section 6 table row GetThemeMetric
+*,,,PROPGETTER.order,,,rule,"out-pointer NULL->E_POINTER, then handle->E_HANDLE, then lookup (miss 0x80070490)",,,,,,DECOMP,yes,"02 section 6 table (GetThemeInt body == GetThemeColor body, RVA 0x1cf80)"
+*,,,HANDLE.format,,,rule,"(generation<<16)|slot; fresh slot gen 1; same (file,class,baseclass,dpi,flag) reopen returns same HTHEME",,,,,,DECOMP,yes,"CThemeApiHelper::OpenHandle 0x18888, OpenRenderObject 0x19e40 (02 section 4)"
+*,,,OPEN.lasterror,,,rule,success 0; unknown class 0x80070490; NULL class 0x80004003; empty 0x80070057; bad hwnd 0x80070006,,,,,,DECOMP,yes,02 section 5 and 13
+*,,,CLASSLIST,,,rule,"';' separated, first success wins, 'App::Class' split on first '::', ASCII case-insensitive",,,,,,DECOMP,yes,MatchThemeClassList 0x197c0 (02 section 5.1)
+*,,,DEFAULT.GetThemeAppProperties,,,rule,3,,,,,,DECOMP,yes,CAppInfo::CAppInfo 0x37ac (02 section 14 item 1)
+*,,,HEADER.InitTheme.calls,,,rule,"PARTSIZE(1,0,TS_TRUE) ; POSITION(1,0,3403) ; PARTSIZE(5,0,TS_TRUE) ; PARTSIZE(4,0,TS_TRUE) ; PARTSIZE(7,0,TS_TRUE) ; hdc NULL, prc NULL; HRESULTs of PARTSIZE ignored",,,,,,DECOMP,yes,"GET /api/function/comctl32/_Header_InitTheme/decomp RVA 0x85d98 (05 section 4.2, 01 section 4.3)"
+Header,,,HEADER.consumers,,,rule,"min_height=max(p1.cy,minsize.y); HD+0x114=max(HD+0x114,p5.cx); HD+0x158=p4 size; HD+0x144=p7 size",,,,,,DECOMP,yes,"same, RVA 0x85d98"
+Header,1,,HP_HEADERITEM,,,const,1,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vsstyle.h:647
+Header,2,,HP_HEADERITEMLEFT,,,const,2,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vsstyle.h:648
+Header,3,,HP_HEADERITEMRIGHT,,,const,3,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vsstyle.h:649
+Header,4,,HP_HEADERSORTARROW,,,const,4,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vsstyle.h:650
+Header,5,,HP_HEADERDROPDOWN,,,const,5,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vsstyle.h:651
+Header,6,,HP_HEADERDROPDOWNFILTER,,,const,6,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vsstyle.h:652
+Header,7,,HP_HEADEROVERFLOW,,,const,7,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vsstyle.h:653
+*,,,TMT_MINSIZE,,,const,3403,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:342
+*,,,TMT_SIZINGMARGINS,,,const,3601,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:349
+*,,,TMT_CONTENTMARGINS,,,const,3602,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:350
+*,,,TMT_BORDERSIZE,,,const,2403,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:300
+*,,,TMT_IMAGECOUNT,,,const,2401,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:298
+*,,,TMT_WIDTH,,,const,2416,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:313
+*,,,TMT_HEIGHT,,,const,2417,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:314
+*,,,TMT_IMAGEFILE,,,const,3001,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:331
+*,,,TMT_FILLCOLOR,,,const,3802,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:353
+*,,,TMT_TEXTCOLOR,,,const,3803,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:354
+*,,,TMT_COMPOSITED,,,const,2204,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:281
+*,,,TMT_ANIMATIONDURATION,,,const,5006,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:399
+*,,,TMT_FRAMESPERSECOND,,,const,2426,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:323
+*,,,TMT_SIZINGBORDERWIDTH,,,const,1201,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:204
+*,,,TMT_SCROLLBARWIDTH,,,const,1202,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:205
+*,,,TMT_CAPTIONBARHEIGHT,,,const,1205,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:208
+*,,,TMT_GLYPHINDEX,,,const,2418,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/vssym32.h:315
+*,,,TS_MIN,,,const,0,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/uxtheme.h:280-284
+*,,,TS_TRUE,,,const,1,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/uxtheme.h:280-284
+*,,,TS_DRAW,,,const,2,,,,,,SDK-HEADER,yes,/usr/x86_64-w64-mingw32/include/uxtheme.h:280-284
+Header,1,0,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; stage 1 blocker
+Header,1,0,PARTSIZE,TS_MIN,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row
+Header,1,0,PARTSIZE,TS_DRAW,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row
+Header,1,0,TMT_MINSIZE(3403),,96,position,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; stage 1 blocker: decides whether 24 comes from size or MINSIZE
+Header,4,0,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; stage 1 (stored in HD+0x158/0x114/0x144)
+Header,5,0,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; stage 1 (stored in HD+0x158/0x114/0x144)
+Header,7,0,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; stage 1 (stored in HD+0x158/0x114/0x144)
+Header,1,0,"GetThemeTextExtent(L""M"",DT_NOPREFIX)",,96,size,UNKNOWN,,,,,,UNKNOWN,no,"needs Win10 probe row; Header_NewFont themed text height, per font"
+Header,1,1..12,TMT_CONTENTMARGINS,,96,margins,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; GetThemeBackgroundContentRect inset
+Header,1,0,GetThemeBackgroundExtent,,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; Header_ComputeItemWidth
+Header,1,0,IsThemePartDefined,,96,bool,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row
+Header,1,0,TMT_BGTYPE/TMT_IMAGELAYOUT/TMT_IMAGECOUNT,,96,enum/int,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row
+(sysmetric),,,SM_CYEDGE,,96,int,UNKNOWN,,,,,,UNKNOWN,no,"needs Win10 probe row; runtime metric, 2 at 96 dpi on stock Win10 is expected but unrecorded on the oracle (01 section 8)"
+(sysmetric),,,SM_CYMENUCHECK(72)@96dpi,,96,int,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; seeds HD+0x114 dropdown width (01 section 4.4)
+Button,1,1,PARTSIZE,TS_DRAW,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+Button,2,1,PARTSIZE,TS_DRAW,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+Button,3,1,PARTSIZE,TS_DRAW,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+Button,7,1,PARTSIZE,TS_DRAW,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+Status,3,0,PARTSIZE,TS_DRAW,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+TrackBar,3,1,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+ListView,10,0,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+MonthCal,10,0,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+Window,18,0,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+Window,19,0,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+Tooltip,5,1,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+Rebar,1,0,PARTSIZE,TS_TRUE,96,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; 01_consumers.md section 7 probe input
+ListView,1,3,TMT_CONTENTMARGINS,,96,margins,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row
+ListView,6,0,TMT_CONTENTMARGINS,,96,margins,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row
+ComboBox,4,1,TMT_BORDERSIZE,,96,int,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row
+Edit,5,1,TMT_CONTENTMARGINS,,96,margins,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row
+Progress,0,0,TMT_FRAMESPERSECOND/ANIMATIONDURATION/PIXELSPERFRAME/ANIMATIONDELAY,,96,int,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row
+Toolbar,0,0,TMT_SIZINGMARGINS,,96,margins,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row
+Window,"1,2,3,5",1,TMT_CAPTIONMARGINS(3603),,96,margins,UNKNOWN,,,,,,UNKNOWN,no,"needs Win10 probe row; id 3603 = TMT_CAPTIONMARGINS, vssym32.h:351; 01 section 7 probe input"
+Header,1,0,PARTSIZE,TS_TRUE,120,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; dpi plateau 120
+Header,1,0,PARTSIZE,TS_TRUE,144,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; dpi plateau 144
+Header,1,0,PARTSIZE,TS_TRUE,192,size,UNKNOWN,,,,,,UNKNOWN,no,needs Win10 probe row; dpi plateau 192
