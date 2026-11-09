@@ -27,7 +27,7 @@ Labels: [R] repo fact (file:line read in this pass); [bb] fact from a bulletin-b
 
 ### 1.2 Export census [R, counted from `exports_manifest.tsv` and `host/i7dbg/data/owned-export-status.tsv`]
 
-193 exports, ordinals 1..193; 85 named, 108 ordinal-only; 34 are `SHUNIMPL.#N` forwarders in stock (stubs here); `partial` 35, `ni` 158 (i7dbg status rows: `PARTIAL 35`, `STUB 158`). Image base 0x79100000. Corpus provenance: Win10 `uxtheme.dll` 10.0.19041 (the doc calls it 22H2 19041.2965 elsewhere; the task says 2193; the exact build string of the corpus module was not re-queried here: UNKNOWN which).
+193 exports, ordinals 1..193; 85 named, 108 ordinal-only; 34 are `SHUNIMPL.#N` forwarders in stock (stubs here); `partial` 35, `ni` 158 (i7dbg status rows: `PARTIAL 35`, `STUB 158`). Image base 0x79100000. Corpus provenance: Win10 `uxtheme.dll` 10.0.19041.2193 [VERIFIED in the fact-check pass: `GET /api/modules/uxtheme` returns `"version":"10.0.19041.2193"`, size 627200, image_base 0x171..., pdb UxTheme.pdb; the `2965` that the repo docs mention is the user32 build, not uxtheme].
 
 ### 1.3 What the 35 `partial` exports return (verbatim behaviour classes) [R `UXTHEME-DWMAPI-W10-LINK.md` section 3]
 
@@ -36,7 +36,7 @@ Labels: [R] repo fact (file:line read in this pass); [bb] fact from a bulletin-b
 | `IsThemeActive`, `IsAppThemed` | FALSE; last error 0 (0x8000FFFF before init) | V-corpus 0x224e0, 0x224b0 |
 | `IsCompositionActive` | FALSE, last error untouched | V-corpus 0xe8b0; internal unread |
 | `OpenThemeData`, `OpenThemeDataEx`, `OpenThemeDataForDpi`, ordinal 49 `OpenNcThemeData` | NULL, last error 0x80070490 (NULL class list: 0x80004003); hwnd validity check and prop clear NOT done | V-corpus 0xbb20, 0x1b590 |
-| `CloseThemeData` + 25 handle calls (`DrawThemeBackground`, `DrawThemeBackgroundEx`, `GetThemePartSize`, `GetThemeBackgroundContentRect`, `GetTheme{Color,Int,Bool,Font,Metric,Rect,String,Margins,Position,TextExtent,TextMetrics,...}`, `DrawTheme{Text,Edge,Icon}`, `HitTestThemeBackground`) | E_HANDLE 0x80070006 | `CloseThemeData`, `GetThemePartSize`, `GetThemeBackgroundContentRect`, `DrawThemeBackground(Ex)` are V-corpus (0x190f0, 0x14a20, 0x17ca0, 0x15000, 0x5200); the other 21 are Win7 crate rules, Win10 argument-check order UNVERIFIED |
+| `CloseThemeData` + 25 handle calls (`DrawThemeBackground`, `DrawThemeBackgroundEx`, `GetThemePartSize`, `GetThemeBackgroundContentRect`, `GetTheme{Color,Int,Bool,Font,Metric,Rect,String,Margins,Position,TextExtent,TextMetrics,...}`, `DrawTheme{Text,Edge,Icon}`, `HitTestThemeBackground`) | E_HANDLE 0x80070006 | `CloseThemeData`, `GetThemePartSize`, `GetThemeBackgroundContentRect`, `DrawThemeBackground(Ex)` are V-corpus (0x190f0, 0x14a20, 0x17ca0, 0x15000, 0x5200); the other 21 are Win7 crate rules, Win10 argument-check order UNVERIFIED. CORRECTION (fact-check): for `GetThemePosition` the Win10 order IS readable (`GET /api/function/uxtheme/GetThemePosition/decomp`, RVA 0x6af0): a NULL `pPoint` returns 0x80004003 (E_POINTER, `-0x7fffbffd`) BEFORE the handle lookup; only a non-NULL `pPoint` reaches `CThemeApiHelper::OpenHandle`. So "every handle call returns E_HANDLE" holds only for non-NULL out pointers; header callers always pass one |
 | `SetWindowTheme`, `EnableThemeDialogTexture`, `SetWindowThemeAttribute` | window-property calls (atoms 0xA910/0xA911/0xA914/0xA916), `WM_THEMECHANGED` | V-corpus 0x3bb0, 0x4ef0, 0x65e0 |
 
 Everything else (158) is `ni`: HRESULT-typed ones return E_NOTIMPL, others FALSE/NULL/0 with `ERROR_CALL_NOT_IMPLEMENTED`. This includes `BufferedPaint*`, `GetWindowTheme`, `GetCurrentThemeName`, `GetThemeSys*`, `DrawThemeParentBackground*`, `IsThemePartDefined`, `IsThemeBackgroundPartiallyTransparent`, `GetThemeAppProperties`.
@@ -103,7 +103,7 @@ Separately, the 16 vs 15 text height and the 20-vs-19 row are the **font** probl
 - `GetThemePartSize(h, NULL, 5, 0, NULL, TS_TRUE, &sz)`: `HD+0x114 = max(HD+0x114, sz.cx)`; `HD+0x118 = GetSystemMetrics(0x2d)` (SM_CXEDGE).
 - `GetThemePartSize(h, NULL, 4, 0, ..., &HD+0x158)` and `(h, NULL, 7, 0, ..., &HD+0x144)`.
 
-`Header_NewFont` (RVA 0x86174) with a theme: `GetThemeTextExtent(h, hdc, 1, 0, L"M", -1, 0x800, ...)` replaces the "..." extent (`HD+0x44/0x4c`), then `Header_OnLayout` (RVA 0x4b2a8) applies `height = max(text_cy + 2*edge, HD+0x160)` exactly as the Rust model. So the probes needed from Win10 for the header alone are GetThemePartSize parts 1, 4, 5, 7 state 0, GetThemePosition(1, 0, 3403), GetThemeTextExtent("M") (survey and probe list are other agents' files).
+`Header_NewFont` (RVA 0x86174) with a theme: `GetThemeTextExtent(h, hdc, 1, 0, L"M", -1, 0x800, ...)` replaces the "..." extent (`HD+0x44/0x4c`), then `Header_OnLayout` (RVA 0x4b2a8) applies `height = max(text_cy + 2*edge, HD+0x160)` exactly as the Rust model. Part ids (verified against `/usr/x86_64-w64-mingw32/include/vsstyle.h` HEADERPARTS): 1 = HP_HEADERITEM, 4 = HP_HEADERSORTARROW, 5 = HP_HEADERDROPDOWN, 7 = HP_HEADEROVERFLOW (part 6, HP_HEADERDROPDOWNFILTER, is not queried at init). `TS_TRUE` is the 2nd-to-last enum arg (uxtheme.h:282); `0x800` in the `GetThemeTextExtent` call is `DT_NOPREFIX` (winuser.h:3455); `0xd4b` = 3403 = `TMT_MINSIZE` is now VERIFIED from `vssym32.h:342` (that it is a POSITION-typed property is still inference from the number range 3401..3407). Two further decomp facts the first draft missed: (a) `_Header_InitTheme` ignores the HRESULT of every `GetThemePartSize`; `local_28` is an uninitialised stack SIZE if the call fails, so a table that hands out a non-NULL handle MUST make part 1 succeed or the header min-height becomes garbage; only `GetThemePosition`'s HRESULT is tested; (b) `Header_OnLayout` and `Header_NewFont` gate on the theme HANDLE (`HD+0x130 != 0`) and `Header_NewFont` falls back to the `"..."` extent if `GetThemeTextExtent` fails (`HVar1 < 0`), whereas the Rust model gates on `Theme.active`. So the probes needed from Win10 for the header alone are GetThemePartSize parts 1, 4, 5, 7 state 0, GetThemePosition(1, 0, 3403), GetThemeTextExtent("M") (survey and probe list are other agents' files).
 
 ### 4.3 Where a table plugs in (three options, with the catch)
 
@@ -161,8 +161,27 @@ Suggested file name by house convention: `docs/design/win10/UXTHEME-THEMEDATA-RE
 
 - Any Win10 oracle row for GetThemePartSize/GetThemeMetric/GetThemeInt/GetThemePosition/GetThemeMargins/GetThemeTextExtent: none found in repo or bb searches (`bb search uxtheme`, `bb search CC30`).
 - Whether Win10 `OpenThemeData(hwnd,"Header")` on the oracle returns non-NULL under the Aero Lite/default 19041 theme with 96 DPI and which `.msstyles` the oracle runs (high-contrast, dark mode, scale factor). The oracle's DPI/scale and colour scheme affect every number; CC30 fixtures say dpiY 96 (lanec/laneg rows).
-- Composition of 24: part 1 size vs TMT_MINSIZE vs the "M" extent. Not separable from CC30.
+- Composition of 24: part 1 size vs TMT_MINSIZE vs the "M" extent. Not separable from CC30. (Fact-check note: from the decomp, min height = max(part1.cy, MINSIZE.y) and the "M" extent only enters through `text_cy + 2*edge`, which the 24 px exceeds when text_cy is 13-15, so the 24 is most likely part1/MINSIZE; still inference.)
 - Policy status of a committed themed-size table (section 3.1 item 6).
 - `bb attach` content of CC30 rows (not fetched). Source of `cc30_lv_geometry_probe.c` (branch not local).
 - Whether `uxtheme-w10` is in the default staged family image (only in GENERIC and the comctl-subitems gate was found).
 - `docs/design/win10/OWNCHROME-ALPHA-PLAN.md`, `RING2-PLAN.md`, `CAPTION-7ZFM-FINDINGS.md`: referenced on bb, not present on master.
+
+## 9. Verification (adversarial fact-check pass)
+
+Re-run / re-read on master `25af4cbccd` of `/home/iceisfun/work/industrial7` and the corpus API. Result: the document is accurate on every load-bearing point; four corrections/additions were applied in place (version, GetThemePosition arg order, part-id names and uninitialised-SIZE hazard, composition-of-24 note).
+
+CONFIRMED (read or re-ran):
+- Header layout rule `hdr/layout.rs:55-71`, `Theme.active && height <= min_height` at :60-61: exact. `Theme` struct `hdr/mod.rs:210-222`, `theme_info` default `mod.rs:381-384`, create-time read `mod.rs:514-521`, `WM_THEMECHANGED` re-read `msg.rs:571-573`: exact.
+- `hdr_host.rs:923-925` returns `Theme::default()`; module comment lines 4-5 say uxtheme/imm32 are NOT bound: exact.
+- Overloading of `Theme.active` (grep): `msg.rs:240`, `drag.rs:274`, `hit.rs:42`, `layout.rs:60,107,214,244,267`: all exist as cited.
+- Stock decomp via `GET /api/function/comctl32/_Header_InitTheme/decomp` (RVA 0x85d98): calls GetThemePartSize parts 1,5,4,7 (state 0, TS_TRUE), GetThemePosition(1,0,0xd4b), `HD+0x160 = max(part1.cy, pos.y)`, `HD+0x114 = max(.., part5.cx)`, SM 0x2d: exact. `Header_NewFont` GetThemeTextExtent(...,L"M",-1,0x800): exact. `Header_OnLayout` RVA 0x4b2a8 `height = max(HD+0x4c + 2*edge, HD+0x160)` plus filter-bar add: exact, matches the Rust model.
+- uxtheme-w10 census: `exports_manifest.tsv` has 193 data rows; status partial 35 / ni 158; kind real 35 / stub 158; 108 `Ordinal_N` rows (so 85 named); 34 `SHUNIMPL` forwarder rows: all exact. Corpus module version 10.0.19041.2193 (see 1.2).
+- `docs/OWNED_STATUS.md:252` is the Win7 uxtheme row (`research only ... rank 2`); `grep -c "uxtheme-w10|shell32-w10"` in OWNED_STATUS = 0; R5 theme row `0 files NOT_SHIPPED` at :637 (the file shows it at line 637; ok). `registry.tsv` lines 300 (w10-uxtheme-off wired), 410/425/426 (propsys/shcore/shell32 unwired), 443 (uxtheme-w10 unwired): exact.
+- `DEFAULT_SYS_COLORS` at `w10-win32k-serverinfo/src/lib.rs:97` with the "only BTNFACE observed" comment at :87-96; `caller_is_armed_win10` at `personality.rs:344`: exact. `ls userland/wintests/win10/expected | wc -l` = 114, and no `win10_user32_misc*` or uxtheme record exists: exact.
+- CC30 numbers: bb #1134 shows i7 header 20 (text_cy 16 + 2*2), Win10 header 24 / rows 19, `-11 MS Shell Dlg` guifont; attachments [1465] `cc30-i7-rows.txt` and [1466] `cc30-m205-std1-out.txt` exist (not downloaded). Another bb row confirms Win10 header-item rect top 24 bottom 43 vs ours 20/40 for the CC29 fixture.
+- SDK constants: HEADERPARTS, `TMT_MINSIZE 3403`, `DT_NOPREFIX 0x800` checked against the mingw headers.
+
+NOT RE-VERIFIED (kept as in the first draft, treat as UNVERIFIED): the 711/833 shell32 figure; line numbers of the tab/tb/status/tv/rebar "theme arms skipped" comments (tab `lib.rs:11` seen, others not opened); `lv_ui.rs:84-175` (seen only the start of the run-time uxtheme section at :84); `comctl32_theme_v6.c` contents (file exists); bb replies #16650/#16656/#16659 numbering (content confirmed, reply ids not re-matched); ranking doc details beyond lines 1-9; `comctl_subitems.rs`/`gates.rs`/`w10_family.rs` line cites; the claim about the dwmapi/glass_rules host tests.
+
+MISSING FINDING added: see the correction rows above (uninitialised `SIZE` when a part-size call fails; GetThemePosition NULL-pPoint order).
