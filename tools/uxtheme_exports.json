@@ -1,0 +1,1353 @@
+[
+{
+"name": null,
+"ordinal": 1,
+"rva": 331632,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50f70"
+},
+{
+"name": null,
+"ordinal": 2,
+"rva": 580340,
+"forwarder": "SHUNIMPL.#440",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 3,
+"rva": 580228,
+"forwarder": "SHUNIMPL.#441",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 4,
+"rva": 580200,
+"forwarder": "SHUNIMPL.#445",
+"ref": null
+},
+{
+"name": "BeginPanningFeedback",
+"ordinal": 5,
+"rva": 285120,
+"forwarder": null,
+"ref": "uxtheme.dll!0x459c0"
+},
+{
+"name": "EndPanningFeedback",
+"ordinal": 6,
+"rva": 285136,
+"forwarder": null,
+"ref": "uxtheme.dll!0x459d0"
+},
+{
+"name": null,
+"ordinal": 7,
+"rva": 327360,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4fec0"
+},
+{
+"name": null,
+"ordinal": 8,
+"rva": 326352,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4fad0"
+},
+{
+"name": null,
+"ordinal": 9,
+"rva": 325616,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4f7f0"
+},
+{
+"name": null,
+"ordinal": 10,
+"rva": 326128,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4f9f0"
+},
+{
+"name": null,
+"ordinal": 11,
+"rva": 580354,
+"forwarder": "SHUNIMPL.#190",
+"ref": null
+},
+{
+"name": "UpdatePanningFeedback",
+"ordinal": 12,
+"rva": 285264,
+"forwarder": null,
+"ref": "uxtheme.dll!0x45a50"
+},
+{
+"name": null,
+"ordinal": 13,
+"rva": 580242,
+"forwarder": "SHUNIMPL.#444",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 14,
+"rva": 331824,
+"forwarder": null,
+"ref": "uxtheme.dll!0x51030"
+},
+{
+"name": null,
+"ordinal": 15,
+"rva": 325552,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4f7b0"
+},
+{
+"name": null,
+"ordinal": 16,
+"rva": 331296,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50e20"
+},
+{
+"name": null,
+"ordinal": 17,
+"rva": 331504,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50ef0"
+},
+{
+"name": null,
+"ordinal": 18,
+"rva": 580284,
+"forwarder": "SHUNIMPL.#189",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 19,
+"rva": 580270,
+"forwarder": "SHUNIMPL.#188",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 20,
+"rva": 580522,
+"forwarder": "SHUNIMPL.#395",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 21,
+"rva": 580536,
+"forwarder": "SHUNIMPL.#396",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 22,
+"rva": 580578,
+"forwarder": "SHUNIMPL.#397",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 23,
+"rva": 580564,
+"forwarder": "SHUNIMPL.#398",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 24,
+"rva": 580438,
+"forwarder": "SHUNIMPL.#399",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 25,
+"rva": 580480,
+"forwarder": "SHUNIMPL.#400",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 26,
+"rva": 580256,
+"forwarder": "SHUNIMPL.#215",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 27,
+"rva": 580550,
+"forwarder": "SHUNIMPL.#401",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 28,
+"rva": 580494,
+"forwarder": "SHUNIMPL.#402",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 29,
+"rva": 580214,
+"forwarder": "SHUNIMPL.#213",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 30,
+"rva": 580466,
+"forwarder": "SHUNIMPL.#403",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 31,
+"rva": 580396,
+"forwarder": "SHUNIMPL.#431",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 32,
+"rva": 580382,
+"forwarder": "SHUNIMPL.#406",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 33,
+"rva": 165872,
+"forwarder": null,
+"ref": "uxtheme.dll!0x287f0"
+},
+{
+"name": null,
+"ordinal": 34,
+"rva": 580410,
+"forwarder": "SHUNIMPL.#407",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 35,
+"rva": 580424,
+"forwarder": "SHUNIMPL.#408",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 36,
+"rva": 325568,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4f7c0"
+},
+{
+"name": "BeginBufferedAnimation",
+"ordinal": 37,
+"rva": 133024,
+"forwarder": null,
+"ref": "uxtheme.dll!0x207a0"
+},
+{
+"name": "BeginBufferedPaint",
+"ordinal": 38,
+"rva": 114224,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1be30"
+},
+{
+"name": "BufferedPaintClear",
+"ordinal": 39,
+"rva": 132816,
+"forwarder": null,
+"ref": "uxtheme.dll!0x206d0"
+},
+{
+"name": "BufferedPaintInit",
+"ordinal": 40,
+"rva": 133920,
+"forwarder": null,
+"ref": "uxtheme.dll!0x20b20"
+},
+{
+"name": "BufferedPaintRenderAnimation",
+"ordinal": 41,
+"rva": 131616,
+"forwarder": null,
+"ref": "uxtheme.dll!0x20220"
+},
+{
+"name": "BufferedPaintSetAlpha",
+"ordinal": 42,
+"rva": 131008,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1ffc0"
+},
+{
+"name": null,
+"ordinal": 43,
+"rva": 100224,
+"forwarder": null,
+"ref": "uxtheme.dll!0x18780"
+},
+{
+"name": null,
+"ordinal": 44,
+"rva": 12528,
+"forwarder": null,
+"ref": "uxtheme.dll!0x30f0"
+},
+{
+"name": null,
+"ordinal": 45,
+"rva": 11680,
+"forwarder": null,
+"ref": "uxtheme.dll!0x2da0"
+},
+{
+"name": null,
+"ordinal": 46,
+"rva": 309216,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4b7e0"
+},
+{
+"name": "DrawThemeBackgroundEx",
+"ordinal": 47,
+"rva": 20992,
+"forwarder": null,
+"ref": "uxtheme.dll!0x5200"
+},
+{
+"name": null,
+"ordinal": 48,
+"rva": 328208,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50210"
+},
+{
+"name": null,
+"ordinal": 49,
+"rva": 47904,
+"forwarder": null,
+"ref": "uxtheme.dll!0xbb20"
+},
+{
+"name": null,
+"ordinal": 50,
+"rva": 330736,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50bf0"
+},
+{
+"name": "BufferedPaintStopAllAnimations",
+"ordinal": 51,
+"rva": 26944,
+"forwarder": null,
+"ref": "uxtheme.dll!0x6940"
+},
+{
+"name": "BufferedPaintUnInit",
+"ordinal": 52,
+"rva": 141264,
+"forwarder": null,
+"ref": "uxtheme.dll!0x227d0"
+},
+{
+"name": "CloseThemeData",
+"ordinal": 53,
+"rva": 102640,
+"forwarder": null,
+"ref": "uxtheme.dll!0x190f0"
+},
+{
+"name": "DllCanUnloadNow",
+"ordinal": 54,
+"rva": 231584,
+"forwarder": null,
+"ref": "uxtheme.dll!0x388a0"
+},
+{
+"name": "DllGetActivationFactory",
+"ordinal": 55,
+"rva": 231728,
+"forwarder": null,
+"ref": "uxtheme.dll!0x38930"
+},
+{
+"name": "DllGetClassObject",
+"ordinal": 56,
+"rva": 231872,
+"forwarder": null,
+"ref": "uxtheme.dll!0x389c0"
+},
+{
+"name": "DrawThemeBackground",
+"ordinal": 57,
+"rva": 86016,
+"forwarder": null,
+"ref": "uxtheme.dll!0x15000"
+},
+{
+"name": "DrawThemeEdge",
+"ordinal": 58,
+"rva": 5776,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1690"
+},
+{
+"name": "DrawThemeIcon",
+"ordinal": 59,
+"rva": 324720,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4f470"
+},
+{
+"name": null,
+"ordinal": 60,
+"rva": 324528,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4f3b0"
+},
+{
+"name": "OpenThemeDataEx",
+"ordinal": 61,
+"rva": 331200,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50dc0"
+},
+{
+"name": null,
+"ordinal": 62,
+"rva": 580368,
+"forwarder": "SHUNIMPL.#409",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 63,
+"rva": 580508,
+"forwarder": "SHUNIMPL.#404",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 64,
+"rva": 308480,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4b500"
+},
+{
+"name": null,
+"ordinal": 65,
+"rva": 332192,
+"forwarder": null,
+"ref": "uxtheme.dll!0x511a0"
+},
+{
+"name": null,
+"ordinal": 66,
+"rva": 580452,
+"forwarder": "SHUNIMPL.#405",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 67,
+"rva": 324496,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4f390"
+},
+{
+"name": null,
+"ordinal": 68,
+"rva": 332160,
+"forwarder": null,
+"ref": "uxtheme.dll!0x51180"
+},
+{
+"name": null,
+"ordinal": 69,
+"rva": 325920,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4f920"
+},
+{
+"name": "DrawThemeParentBackground",
+"ordinal": 70,
+"rva": 10752,
+"forwarder": null,
+"ref": "uxtheme.dll!0x2a00"
+},
+{
+"name": "DrawThemeParentBackgroundEx",
+"ordinal": 71,
+"rva": 10784,
+"forwarder": null,
+"ref": "uxtheme.dll!0x2a20"
+},
+{
+"name": null,
+"ordinal": 72,
+"rva": 324960,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4f560"
+},
+{
+"name": null,
+"ordinal": 73,
+"rva": 330640,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50b90"
+},
+{
+"name": null,
+"ordinal": 74,
+"rva": 327216,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4fe30"
+},
+{
+"name": null,
+"ordinal": 75,
+"rva": 309824,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4ba40"
+},
+{
+"name": null,
+"ordinal": 76,
+"rva": 165536,
+"forwarder": null,
+"ref": "uxtheme.dll!0x286a0"
+},
+{
+"name": null,
+"ordinal": 77,
+"rva": 580312,
+"forwarder": "SHUNIMPL.#432",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 78,
+"rva": 580648,
+"forwarder": "SHUNIMPL.#433",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 79,
+"rva": 580592,
+"forwarder": "SHUNIMPL.#434",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 80,
+"rva": 580662,
+"forwarder": "SHUNIMPL.#435",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 81,
+"rva": 580606,
+"forwarder": "SHUNIMPL.#430",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 82,
+"rva": 580620,
+"forwarder": "SHUNIMPL.#436",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 83,
+"rva": 580634,
+"forwarder": "SHUNIMPL.#437",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 84,
+"rva": 160736,
+"forwarder": null,
+"ref": "uxtheme.dll!0x273e0"
+},
+{
+"name": null,
+"ordinal": 85,
+"rva": 273424,
+"forwarder": null,
+"ref": "uxtheme.dll!0x42c10"
+},
+{
+"name": null,
+"ordinal": 86,
+"rva": 310656,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4bd80"
+},
+{
+"name": null,
+"ordinal": 87,
+"rva": 580298,
+"forwarder": "SHUNIMPL.#438",
+"ref": null
+},
+{
+"name": null,
+"ordinal": 88,
+"rva": 580326,
+"forwarder": "SHUNIMPL.#439",
+"ref": null
+},
+{
+"name": "DrawThemeText",
+"ordinal": 89,
+"rva": 19904,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4dc0"
+},
+{
+"name": null,
+"ordinal": 90,
+"rva": 272672,
+"forwarder": null,
+"ref": "uxtheme.dll!0x42920"
+},
+{
+"name": null,
+"ordinal": 91,
+"rva": 152672,
+"forwarder": null,
+"ref": "uxtheme.dll!0x25460"
+},
+{
+"name": null,
+"ordinal": 92,
+"rva": 311728,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4c1b0"
+},
+{
+"name": null,
+"ordinal": 93,
+"rva": 153168,
+"forwarder": null,
+"ref": "uxtheme.dll!0x25650"
+},
+{
+"name": null,
+"ordinal": 94,
+"rva": 255040,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e440"
+},
+{
+"name": "GetImmersiveColorFromColorSetEx",
+"ordinal": 95,
+"rva": 47728,
+"forwarder": null,
+"ref": "uxtheme.dll!0xba70"
+},
+{
+"name": null,
+"ordinal": 96,
+"rva": 27728,
+"forwarder": null,
+"ref": "uxtheme.dll!0x6c50"
+},
+{
+"name": null,
+"ordinal": 97,
+"rva": 255296,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e540"
+},
+{
+"name": "GetImmersiveUserColorSetPreference",
+"ordinal": 98,
+"rva": 47856,
+"forwarder": null,
+"ref": "uxtheme.dll!0xbaf0"
+},
+{
+"name": null,
+"ordinal": 99,
+"rva": 165840,
+"forwarder": null,
+"ref": "uxtheme.dll!0x287d0"
+},
+{
+"name": null,
+"ordinal": 100,
+"rva": 255056,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e450"
+},
+{
+"name": null,
+"ordinal": 101,
+"rva": 165888,
+"forwarder": null,
+"ref": "uxtheme.dll!0x28800"
+},
+{
+"name": null,
+"ordinal": 102,
+"rva": 255248,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e510"
+},
+{
+"name": "DrawThemeTextEx",
+"ordinal": 103,
+"rva": 108672,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1a880"
+},
+{
+"name": null,
+"ordinal": 104,
+"rva": 30064,
+"forwarder": null,
+"ref": "uxtheme.dll!0x7570"
+},
+{
+"name": null,
+"ordinal": 105,
+"rva": 255120,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e490"
+},
+{
+"name": null,
+"ordinal": 106,
+"rva": 54256,
+"forwarder": null,
+"ref": "uxtheme.dll!0xd3f0"
+},
+{
+"name": null,
+"ordinal": 107,
+"rva": 255440,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e5d0"
+},
+{
+"name": null,
+"ordinal": 108,
+"rva": 255392,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e5a0"
+},
+{
+"name": null,
+"ordinal": 109,
+"rva": 255488,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e600"
+},
+{
+"name": null,
+"ordinal": 110,
+"rva": 144448,
+"forwarder": null,
+"ref": "uxtheme.dll!0x23440"
+},
+{
+"name": null,
+"ordinal": 111,
+"rva": 255344,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e570"
+},
+{
+"name": null,
+"ordinal": 112,
+"rva": 255424,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e5c0"
+},
+{
+"name": null,
+"ordinal": 113,
+"rva": 255376,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e590"
+},
+{
+"name": "EnableThemeDialogTexture",
+"ordinal": 114,
+"rva": 20208,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4ef0"
+},
+{
+"name": null,
+"ordinal": 115,
+"rva": 309344,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4b860"
+},
+{
+"name": null,
+"ordinal": 116,
+"rva": 312208,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4c390"
+},
+{
+"name": null,
+"ordinal": 117,
+"rva": 255040,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e440"
+},
+{
+"name": null,
+"ordinal": 118,
+"rva": 254992,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e410"
+},
+{
+"name": null,
+"ordinal": 119,
+"rva": 47680,
+"forwarder": null,
+"ref": "uxtheme.dll!0xba40"
+},
+{
+"name": "GetUserColorPreference",
+"ordinal": 120,
+"rva": 54592,
+"forwarder": null,
+"ref": "uxtheme.dll!0xd540"
+},
+{
+"name": "GetColorFromPreference",
+"ordinal": 121,
+"rva": 53872,
+"forwarder": null,
+"ref": "uxtheme.dll!0xd270"
+},
+{
+"name": null,
+"ordinal": 122,
+"rva": 160720,
+"forwarder": null,
+"ref": "uxtheme.dll!0x273d0"
+},
+{
+"name": null,
+"ordinal": 123,
+"rva": 255168,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e4c0"
+},
+{
+"name": null,
+"ordinal": 124,
+"rva": 255104,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e480"
+},
+{
+"name": null,
+"ordinal": 125,
+"rva": 158016,
+"forwarder": null,
+"ref": "uxtheme.dll!0x26940"
+},
+{
+"name": null,
+"ordinal": 126,
+"rva": 109024,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1a9e0"
+},
+{
+"name": null,
+"ordinal": 127,
+"rva": 312096,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4c320"
+},
+{
+"name": null,
+"ordinal": 128,
+"rva": 152688,
+"forwarder": null,
+"ref": "uxtheme.dll!0x25470"
+},
+{
+"name": "EnableTheming",
+"ordinal": 129,
+"rva": 325568,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4f7c0"
+},
+{
+"name": null,
+"ordinal": 130,
+"rva": 255152,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3e4b0"
+},
+{
+"name": null,
+"ordinal": 131,
+"rva": 117200,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1c9d0"
+},
+{
+"name": null,
+"ordinal": 132,
+"rva": 106000,
+"forwarder": null,
+"ref": "uxtheme.dll!0x19e10"
+},
+{
+"name": null,
+"ordinal": 133,
+"rva": 151936,
+"forwarder": null,
+"ref": "uxtheme.dll!0x25180"
+},
+{
+"name": "EndBufferedAnimation",
+"ordinal": 134,
+"rva": 132352,
+"forwarder": null,
+"ref": "uxtheme.dll!0x20500"
+},
+{
+"name": null,
+"ordinal": 135,
+"rva": 152240,
+"forwarder": null,
+"ref": "uxtheme.dll!0x252b0"
+},
+{
+"name": null,
+"ordinal": 136,
+"rva": 151408,
+"forwarder": null,
+"ref": "uxtheme.dll!0x24f70"
+},
+{
+"name": null,
+"ordinal": 137,
+"rva": 151104,
+"forwarder": null,
+"ref": "uxtheme.dll!0x24e40"
+},
+{
+"name": null,
+"ordinal": 138,
+"rva": 53664,
+"forwarder": null,
+"ref": "uxtheme.dll!0xd1a0"
+},
+{
+"name": null,
+"ordinal": 139,
+"rva": 30368,
+"forwarder": null,
+"ref": "uxtheme.dll!0x76a0"
+},
+{
+"name": "EndBufferedPaint",
+"ordinal": 140,
+"rva": 114608,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1bfb0"
+},
+{
+"name": "GetBufferedPaintBits",
+"ordinal": 141,
+"rva": 130336,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1fd20"
+},
+{
+"name": "GetBufferedPaintDC",
+"ordinal": 142,
+"rva": 117616,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1cb70"
+},
+{
+"name": "GetBufferedPaintTargetDC",
+"ordinal": 143,
+"rva": 117456,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1cad0"
+},
+{
+"name": "GetBufferedPaintTargetRect",
+"ordinal": 144,
+"rva": 327024,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4fd70"
+},
+{
+"name": "GetCurrentThemeName",
+"ordinal": 145,
+"rva": 151424,
+"forwarder": null,
+"ref": "uxtheme.dll!0x24f80"
+},
+{
+"name": "GetThemeAnimationProperty",
+"ordinal": 146,
+"rva": 120112,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1d530"
+},
+{
+"name": "GetThemeAnimationTransform",
+"ordinal": 147,
+"rva": 110272,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1aec0"
+},
+{
+"name": "GetThemeAppProperties",
+"ordinal": 148,
+"rva": 26736,
+"forwarder": null,
+"ref": "uxtheme.dll!0x6870"
+},
+{
+"name": "GetThemeBackgroundContentRect",
+"ordinal": 149,
+"rva": 97440,
+"forwarder": null,
+"ref": "uxtheme.dll!0x17ca0"
+},
+{
+"name": "GetThemeBackgroundExtent",
+"ordinal": 150,
+"rva": 107440,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1a3b0"
+},
+{
+"name": "GetThemeBackgroundRegion",
+"ordinal": 151,
+"rva": 17712,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4530"
+},
+{
+"name": "GetThemeBitmap",
+"ordinal": 152,
+"rva": 7744,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1e40"
+},
+{
+"name": "GetThemeBool",
+"ordinal": 153,
+"rva": 118912,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1d080"
+},
+{
+"name": "GetThemeColor",
+"ordinal": 154,
+"rva": 118656,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1cf80"
+},
+{
+"name": "GetThemeDocumentationProperty",
+"ordinal": 155,
+"rva": 327632,
+"forwarder": null,
+"ref": "uxtheme.dll!0x4ffd0"
+},
+{
+"name": "GetThemeEnumValue",
+"ordinal": 156,
+"rva": 7488,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1d40"
+},
+{
+"name": "GetThemeFilename",
+"ordinal": 157,
+"rva": 327824,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50090"
+},
+{
+"name": "GetThemeFont",
+"ordinal": 158,
+"rva": 120432,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1d670"
+},
+{
+"name": "GetThemeInt",
+"ordinal": 159,
+"rva": 118656,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1cf80"
+},
+{
+"name": "GetThemeIntList",
+"ordinal": 160,
+"rva": 328032,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50160"
+},
+{
+"name": "GetThemeMargins",
+"ordinal": 161,
+"rva": 113760,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1bc60"
+},
+{
+"name": "GetThemeMetric",
+"ordinal": 162,
+"rva": 133504,
+"forwarder": null,
+"ref": "uxtheme.dll!0x20980"
+},
+{
+"name": "GetThemePartSize",
+"ordinal": 163,
+"rva": 84512,
+"forwarder": null,
+"ref": "uxtheme.dll!0x14a20"
+},
+{
+"name": "GetThemePosition",
+"ordinal": 164,
+"rva": 27376,
+"forwarder": null,
+"ref": "uxtheme.dll!0x6af0"
+},
+{
+"name": "GetThemePropertyOrigin",
+"ordinal": 165,
+"rva": 328288,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50260"
+},
+{
+"name": "GetThemeRect",
+"ordinal": 166,
+"rva": 161520,
+"forwarder": null,
+"ref": "uxtheme.dll!0x276f0"
+},
+{
+"name": "GetThemeStream",
+"ordinal": 167,
+"rva": 163088,
+"forwarder": null,
+"ref": "uxtheme.dll!0x27d10"
+},
+{
+"name": "GetThemeString",
+"ordinal": 168,
+"rva": 328464,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50310"
+},
+{
+"name": "GetThemeSysBool",
+"ordinal": 169,
+"rva": 328656,
+"forwarder": null,
+"ref": "uxtheme.dll!0x503d0"
+},
+{
+"name": "GetThemeSysColor",
+"ordinal": 170,
+"rva": 328864,
+"forwarder": null,
+"ref": "uxtheme.dll!0x504a0"
+},
+{
+"name": "GetThemeSysColorBrush",
+"ordinal": 171,
+"rva": 329088,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50580"
+},
+{
+"name": "GetThemeSysFont",
+"ordinal": 172,
+"rva": 329312,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50660"
+},
+{
+"name": "GetThemeSysInt",
+"ordinal": 173,
+"rva": 330064,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50950"
+},
+{
+"name": "GetThemeSysSize",
+"ordinal": 174,
+"rva": 330224,
+"forwarder": null,
+"ref": "uxtheme.dll!0x509f0"
+},
+{
+"name": "GetThemeSysString",
+"ordinal": 175,
+"rva": 330432,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50ac0"
+},
+{
+"name": "GetThemeTextExtent",
+"ordinal": 176,
+"rva": 138208,
+"forwarder": null,
+"ref": "uxtheme.dll!0x21be0"
+},
+{
+"name": "GetThemeTextMetrics",
+"ordinal": 177,
+"rva": 139120,
+"forwarder": null,
+"ref": "uxtheme.dll!0x21f70"
+},
+{
+"name": "GetThemeTimingFunction",
+"ordinal": 178,
+"rva": 111632,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1b410"
+},
+{
+"name": "GetThemeTransitionDuration",
+"ordinal": 179,
+"rva": 25456,
+"forwarder": null,
+"ref": "uxtheme.dll!0x6370"
+},
+{
+"name": "GetWindowTheme",
+"ordinal": 180,
+"rva": 27152,
+"forwarder": null,
+"ref": "uxtheme.dll!0x6a10"
+},
+{
+"name": "HitTestThemeBackground",
+"ordinal": 181,
+"rva": 98528,
+"forwarder": null,
+"ref": "uxtheme.dll!0x180e0"
+},
+{
+"name": "IsAppThemed",
+"ordinal": 182,
+"rva": 140464,
+"forwarder": null,
+"ref": "uxtheme.dll!0x224b0"
+},
+{
+"name": "IsCompositionActive",
+"ordinal": 183,
+"rva": 59568,
+"forwarder": null,
+"ref": "uxtheme.dll!0xe8b0"
+},
+{
+"name": "IsThemeActive",
+"ordinal": 184,
+"rva": 140512,
+"forwarder": null,
+"ref": "uxtheme.dll!0x224e0"
+},
+{
+"name": "IsThemeBackgroundPartiallyTransparent",
+"ordinal": 185,
+"rva": 84992,
+"forwarder": null,
+"ref": "uxtheme.dll!0x14c00"
+},
+{
+"name": "IsThemeDialogTextureEnabled",
+"ordinal": 186,
+"rva": 330944,
+"forwarder": null,
+"ref": "uxtheme.dll!0x50cc0"
+},
+{
+"name": "IsThemePartDefined",
+"ordinal": 187,
+"rva": 100704,
+"forwarder": null,
+"ref": "uxtheme.dll!0x18960"
+},
+{
+"name": "OpenThemeData",
+"ordinal": 188,
+"rva": 112016,
+"forwarder": null,
+"ref": "uxtheme.dll!0x1b590"
+},
+{
+"name": "OpenThemeDataForDpi",
+"ordinal": 189,
+"rva": 47584,
+"forwarder": null,
+"ref": "uxtheme.dll!0xb9e0"
+},
+{
+"name": "SetThemeAppProperties",
+"ordinal": 190,
+"rva": 332464,
+"forwarder": null,
+"ref": "uxtheme.dll!0x512b0"
+},
+{
+"name": "SetWindowTheme",
+"ordinal": 191,
+"rva": 15280,
+"forwarder": null,
+"ref": "uxtheme.dll!0x3bb0"
+},
+{
+"name": "SetWindowThemeAttribute",
+"ordinal": 192,
+"rva": 26080,
+"forwarder": null,
+"ref": "uxtheme.dll!0x65e0"
+},
+{
+"name": "ThemeInitApiHook",
+"ordinal": 193,
+"rva": 52640,
+"forwarder": null,
+"ref": "uxtheme.dll!0xcda0"
+}
+]
