@@ -1,0 +1,12 @@
+header.c:1763: customdraw height: 18 (dpi: 96)
+header.c:1852: Test marked todo: Expected 21, got 201
+header.c:1868: Test marked todo: Expected 132, got 3012
+header.c:1870: Test marked todo: Expected 312, got 2013
+header.c:1872: Test marked todo: Expected 1032, got 3102
+header.c:1878: Test marked todo: Expected 132, got 312
+header.c:1880: Test marked todo: Expected 231, got 321
+header.c:1886: Test marked todo: Expected 2031, got 3201
+header.c:1105: Test marked todo: HDM_CLEARFILTER needs 5.80
+header.c:1111: Test marked todo: HDM_EDITFILTER needs 5.80
+v6util.h:92: created cc6.manifest
+0104:header: 1053 tests executed (9 marked as todo, 0 as flaky, 0 failures), 0 skipped.

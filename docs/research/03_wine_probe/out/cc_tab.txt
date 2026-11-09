@@ -1,0 +1,56 @@
+tab.c:770: Test marked todo: Set focused tab parent sequence: the msg sequence is not complete: expected 0000 - actual 004e
+tab.c:770: Failed sequence Set focused tab parent sequence:
+tab.c:770:   0: expected: nothing - actual: 004e wp 00000000 lp 0031f020 id 4294966744
+tab.c:770:   1: expected: nothing - actual: 004e wp 00000000 lp 0031f020 id 4294966745
+tab.c:770:   2: expected: nothing - actual: 004e wp 00000000 lp 0031f020 id 4294966745
+tab.c:789: Test failed: Unexpected state 0.
+tab.c:813: Test marked todo: Unexpected state 0x1.
+tab.c:825: Test failed: Unexpected index -1.
+tab.c:847: Test failed: Unexpected focus index -1.
+tab.c:851: Test failed: Unexpected focus index -1.
+tab.c:857: Test marked todo: Unexpected focus index 1.
+tab.c:860: Test failed: TCS_BUTTONS: set focused tab parent sequence: the msg sequence is not complete: expected 0000 - actual 004e
+tab.c:860: Failed sequence TCS_BUTTONS: set focused tab parent sequence:
+tab.c:860:   0: expected: 004e id 4294966742 - actual: 004e wp 00000000 lp 0031f020 id 4294966742
+tab.c:860:   1: expected: nothing - actual: 004e wp 00000000 lp 0031f020 id 4294966745
+tab.c:880: Test marked todo: Unexpected state 0.
+tab.c:1005: Test marked todo: Expected 2, got 0
+tab.c:1027: Test marked todo: Expected 0, got 1
+tab.c:1213: Test marked todo: Getset tooltip test sequence: the msg 0x0046 was expected, but got msg 0x132e instead
+tab.c:1213: Failed sequence Getset tooltip test sequence:
+tab.c:1213:   0: expected: 0055 id 0 - actual: 0055 wp 00010086 lp 00000003 id 0
+tab.c:1213:   1: expected: 0129 id 0 - actual: 132e wp 00010086 lp 00000000 id 0
+tab.c:1213:   2: expected: 0046 id 0 - actual: 132d wp 00000000 lp 00000000 id 0
+tab.c:1213:   3: expected: 0055 id 0 - actual: 132e wp 00000000 lp 00000000 id 0
+tab.c:1213:   4: expected: 132e id 0 - actual: 132d wp 00000000 lp 00000000 id 0
+tab.c:1213:   5: expected: msg 132d - actual: nothing
+tab.c:1214: Test marked todo: Getset tooltip test parent sequence: the msg sequence is not complete: expected 0046 - actual 0000
+tab.c:1214: Failed sequence Getset tooltip test parent sequence:
+tab.c:1214:   0: expected: msg 0046 - actual: nothing
+tab.c:1298: Test marked todo: insert_focus parent test sequence: the msg sequence is not complete: expected 0000 - actual 004e
+tab.c:1298: Failed sequence insert_focus parent test sequence:
+tab.c:1298:   0: expected: nothing - actual: 004e wp 00000000 lp 0031f030 id 4294966745
+tab.c:1347: Test marked todo: delete_focus parent test sequence: the msg sequence is not complete: expected 0000 - actual 004e
+tab.c:1347: Failed sequence delete_focus parent test sequence:
+tab.c:1347:   0: expected: nothing - actual: 004e wp 00000000 lp 0031f060 id 4294966745
+tab.c:1582: Test failed: Got unexpected rect (1,2)-(98,25).
+tab.c:1700: Test marked todo: Unexpected focused tab 0.
+tab.c:1703: Test marked todo: Unexpected selected tab 0.
+v6util.h:92: created cc6.manifest
+tab.c:770: Test marked todo: Set focused tab parent sequence: the msg sequence is not complete: expected 0000 - actual 004e
+tab.c:770: Failed sequence Set focused tab parent sequence:
+tab.c:770:   0: expected: nothing - actual: 004e wp 00000000 lp 0031f010 id 4294966744
+tab.c:770:   1: expected: nothing - actual: 004e wp 00000000 lp 0031f010 id 4294966745
+tab.c:770:   2: expected: nothing - actual: 004e wp 00000000 lp 0031f010 id 4294966745
+tab.c:789: Test failed: Unexpected state 0.
+tab.c:813: Test marked todo: Unexpected state 0x1.
+tab.c:825: Test failed: Unexpected index -1.
+tab.c:847: Test failed: Unexpected focus index -1.
+tab.c:851: Test failed: Unexpected focus index -1.
+tab.c:857: Test marked todo: Unexpected focus index 1.
+tab.c:860: Test failed: TCS_BUTTONS: set focused tab parent sequence: the msg sequence is not complete: expected 0000 - actual 004e
+tab.c:860: Failed sequence TCS_BUTTONS: set focused tab parent sequence:
+tab.c:860:   0: expected: 004e id 4294966742 - actual: 004e wp 00000000 lp 0031f010 id 4294966742
+tab.c:860:   1: expected: nothing - actual: 004e wp 00000000 lp 0031f010 id 4294966745
+tab.c:880: Test marked todo: Unexpected state 0.
+0104:tab: 5671 tests executed (16 marked as todo, 0 as flaky, 11 failures), 0 skipped.

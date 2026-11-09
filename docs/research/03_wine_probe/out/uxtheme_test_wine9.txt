@@ -1,0 +1,25 @@
+system.c:109: GetProcAddress(uxtheme, GetImmersiveColorFromColorSetEx) failed.
+system.c:110: GetProcAddress(uxtheme, GetImmersiveUserColorSetPreference) failed.
+system.c:113: GetProcAddress(user32, DisplayConfigSetDeviceInfo) failed.
+system.c:311: Theming is active
+system.c:314: Test executable is themed
+system.c:584: Test marked todo: OpenThemeData() should fail
+system.c:586: Test marked todo: Got unexpected 0.
+system.c:630: Test marked todo: Expected FALSE
+system.c:921: Test marked todo: Expected E_POINTER, got 0x80070057
+system.c:930: Test marked todo: Expected E_HANDLE, got 0x80070490
+system.c:820: Test marked todo: Expected E_NOT_SUFFICIENT_BUFFER, got 0x00000000
+system.c:831: Test marked todo: Expected E_NOT_SUFFICIENT_BUFFER, got 0x00000000
+system.c:876: Test failed: got L"C:\\windows\\resources\\themes\\light\\light.msstyles"
+system.c:203: Test marked todo: DisplayConfigSetDeviceInfo() is unavailable.
+system.c:1235: Tests skipped: Failed to set primary monitor dpi to 192.
+system.c:1049: Test marked todo: Unexpected return code 0x80004001
+system.c:1053: Test marked todo: Unexpected return code 0x80004001
+system.c:1756: Test failed: DrawThemeParentBackground: the msg sequence is not complete: expected 0000 - actual 0014
+system.c:1756: Failed sequence DrawThemeParentBackground:
+system.c:1756:   0: expected: nothing - actual: 0014 wp 05010057 lp 00000000 id 0
+system.c:1756:   1: expected: nothing - actual: 0318 wp 05010057 lp 00000004 id 0
+system.c:2748: Tests skipped: SystemUsesLightTheme registry value not found.
+system.c:2777: Tests skipped: AppsUseLightTheme registry value not found.
+system.c:2799: Test failed: Immersive color set functions are unavailable.
+wine: Unhandled page fault on read access to 0000000000000004 at address 00006FFFFB2880D8 (thread 0110), starting debugger...

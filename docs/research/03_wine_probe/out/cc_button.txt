@@ -1,0 +1,142 @@
+v6util.h:92: created cc6.manifest
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Failed sequence SetFocus(0) on a button:
+button.c:884:   0: expected: 0008 id 0 - actual: 8005 wp fffffffffffffffc lp 00000000 id 0
+button.c:884:   1: expected: 0111 id 0 - actual: 0008 wp 00000000 lp 00000000 id 0
+button.c:884:   2: expected: 0281 id 0 - actual: 0111 wp 0007000e lp 0001006a id 0
+button.c:884:   3: expected: 0282 id 0 - actual: 0281 wp 00000000 lp c000000f id 0
+button.c:884:   4: expected: 8000 id 0 - actual: 8000 wp 00000000 lp 00000000 id 0
+button.c:884:   5: expected: 000f id 0 - actual: 000f wp 00000000 lp 00000000 id 0
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Failed sequence SetFocus(0) on a button:
+button.c:884:   0: expected: 0008 id 0 - actual: 8005 wp fffffffffffffffc lp 00000000 id 0
+button.c:884:   1: expected: 0111 id 0 - actual: 0008 wp 00000000 lp 00000000 id 0
+button.c:884:   2: expected: 0281 id 0 - actual: 0111 wp 0007000e lp 0002006a id 0
+button.c:884:   3: expected: 0282 id 0 - actual: 0281 wp 00000000 lp c000000f id 0
+button.c:884:   4: expected: 8000 id 0 - actual: 8000 wp 00000000 lp 00000000 id 0
+button.c:884:   5: expected: 000f id 0 - actual: 000f wp 00000000 lp 00000000 id 0
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Failed sequence SetFocus(0) on a button:
+button.c:884:   0: expected: 0008 id 0 - actual: 8005 wp fffffffffffffffc lp 00000000 id 0
+button.c:884:   1: expected: 0111 id 0 - actual: 0008 wp 00000000 lp 00000000 id 0
+button.c:884:   2: expected: 0281 id 0 - actual: 0111 wp 0007000e lp 0003006a id 0
+button.c:884:   3: expected: 0282 id 0 - actual: 0281 wp 00000000 lp c000000f id 0
+button.c:884:   4: expected: 8000 id 0 - actual: 8000 wp 00000000 lp 00000000 id 0
+button.c:884:   5: expected: 000f id 0 - actual: 000f wp 00000000 lp 00000000 id 0
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Failed sequence SetFocus(0) on a button:
+button.c:884:   0: expected: 0008 id 0 - actual: 8005 wp fffffffffffffffc lp 00000000 id 0
+button.c:884:   1: expected: 0111 id 0 - actual: 0008 wp 00000000 lp 00000000 id 0
+button.c:884:   2: expected: 0281 id 0 - actual: 0111 wp 0007000e lp 0004006a id 0
+button.c:884:   3: expected: 0282 id 0 - actual: 0281 wp 00000000 lp c000000f id 0
+button.c:884:   4: expected: 8000 id 0 - actual: 8000 wp 00000000 lp 00000000 id 0
+button.c:884:   5: expected: 000f id 0 - actual: 000f wp 00000000 lp 00000000 id 0
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Failed sequence SetFocus(0) on a button:
+button.c:884:   0: expected: 0008 id 0 - actual: 8005 wp fffffffffffffffc lp 00000000 id 0
+button.c:884:   1: expected: 0111 id 0 - actual: 0008 wp 00000000 lp 00000000 id 0
+button.c:884:   2: expected: 0281 id 0 - actual: 0111 wp 0007000e lp 0005006a id 0
+button.c:884:   3: expected: 0282 id 0 - actual: 0281 wp 00000000 lp c000000f id 0
+button.c:884:   4: expected: 8000 id 0 - actual: 8000 wp 00000000 lp 00000000 id 0
+button.c:884:   5: expected: 000f id 0 - actual: 000f wp 00000000 lp 00000000 id 0
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Failed sequence SetFocus(0) on a button:
+button.c:884:   0: expected: 0008 id 0 - actual: 8005 wp fffffffffffffffc lp 00000000 id 0
+button.c:884:   1: expected: 0111 id 0 - actual: 0008 wp 00000000 lp 00000000 id 0
+button.c:884:   2: expected: 0281 id 0 - actual: 0111 wp 0007000e lp 0006006a id 0
+button.c:884:   3: expected: 0282 id 0 - actual: 0281 wp 00000000 lp c000000f id 0
+button.c:884:   4: expected: 8000 id 0 - actual: 8000 wp 00000000 lp 00000000 id 0
+button.c:884:   5: expected: 000f id 0 - actual: 000f wp 00000000 lp 00000000 id 0
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Line has been silenced after 42 occurrences
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x002b was expected, but got msg 0x8000 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 000f
+button.c:895: Test marked todo: BM_SETSTYLE on a button: the msg 0x0085 should NOT have been sent by DefWindowProc
+button.c:895: Failed sequence BM_SETSTYLE on a button:
+button.c:895:   0: expected: 00f4 id 0 - actual: 00f4 wp 0000080b lp 00000001 id 0
+button.c:895:   1: expected: 007c id 0 - actual: 007c wp fffffffffffffff0 lp 0031ed78 id 0
+button.c:895:   2: expected: 007d id 0 - actual: 007d wp fffffffffffffff0 lp 0031ed78 id 0
+button.c:895:   3: expected: 800a id 0 - actual: 800a wp fffffffffffffffc lp 00000000 id 0
+button.c:895:   4: expected: 8000 id 0 - actual: 8000 wp 00000000 lp 00000000 id 0
+button.c:895:   5: expected: 000f id 0 - actual: 000f wp 00000000 lp 00000000 id 0
+button.c:895:   6: expected: 0085 id 0 - actual: 0085 wp 00000001 lp 00000000 id 0
+button.c:895:   7: expected: 0014 id 0 - actual: 0085 wp 00000001 lp 00000000 id 0
+button.c:895:   8: expected: 002b id 0 - actual: 0014 wp 13010049 lp 00000000 id 0
+button.c:895:   9: expected: nothing - actual: 002b wp 0000000e lp 0031f0d0 id 0
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0008 was expected, but got msg 0x8005 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x0111 was expected, but got msg 0x0008 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x8000 was expected, but got msg 0x0111 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg 0x000f was expected, but got msg 0x0281 instead
+button.c:884: Test failed: SetFocus(0) on a button: the msg sequence is not complete: expected 0000 - actual 8000
+button.c:1092: Test marked todo: WM_LBUTTONUP on a button: the msg sequence is not complete: expected 8013 - actual 0000
+button.c:1092: Failed sequence WM_LBUTTONUP on a button:
+button.c:1092:   0: expected: 0202 id 0 - actual: 0202 wp 00000000 lp 00000000 id 0
+button.c:1092:   1: expected: 00f3 id 0 - actual: 00f3 wp 00000000 lp 00000000 id 0
+button.c:1092:   2: expected: 800a id 0 - actual: 800a wp fffffffffffffffc lp 00000000 id 0
+button.c:1092:   3: expected: 0215 id 0 - actual: 0215 wp 00000000 lp 00000000 id 0
+button.c:1092:   4: expected: msg 8013 - actual: nothing
+button.c:2433: Test marked todo: Type 0xa: Expected content unchanged.
+0104:button: Silenced 0 todos, 0 skips and 64 traces.
+0104:button: 11542 tests executed (3 marked as todo, 0 as flaky, 76 failures), 0 skipped.

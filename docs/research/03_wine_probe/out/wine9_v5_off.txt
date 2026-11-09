@@ -1,0 +1,88 @@
+wine_get_version = present
+wine version = 9.0
+RtlGetVersion = 10.0.19043
+comctl32 loaded from = C:\windows\system32\COMCTL32.dll
+comctl32 DllGetVersion = 5.81.2919
+IsThemeActive = 0
+IsAppThemed = 0
+IsCompositionActive = 0
+GetCurrentThemeName = hr=0x80070490 name="" color="" size=""
+GetSystemMetrics SM_CYCAPTION/SM_CXVSCROLL/SM_CYMENU = 26/17/19
+LOGPIXELSY = 96
+DEFAULT_GUI_FONT tmHeight = 13
+OpenThemeData class = Header -> NULL lasterr=0x80070490
+OpenThemeData class = Button -> NULL lasterr=0x80070490
+OpenThemeData class = Tab -> NULL lasterr=0x80070490
+OpenThemeData class = ListView -> NULL lasterr=0x80070490
+OpenThemeData class = Window -> NULL lasterr=0x80070490
+OpenThemeData class = NoSuchClass -> NULL lasterr=0x80070490
+OpenThemeData class = Header::Foo -> NULL lasterr=0x80070490
+OpenThemeData(NULL class) = NULL lasterr=0x80004003
+GetThemePartSize(NULL htheme) = hr=0x80070006 cx=-7 cy=-7
+InitTheme OpenThemeData(Header) = NULL
+OpenThemeData(Header) lasterr = NULL 0x80070490
+OpenThemeData(Button) lasterr = NULL 0x80070490
+OpenThemeData(Tab) lasterr = NULL 0x80070490
+OpenThemeData(ListView) lasterr = NULL 0x80070490
+OpenThemeData(Scrollbar) lasterr = NULL 0x80070490
+OpenThemeData(Edit) lasterr = NULL 0x80070490
+OpenThemeData(Combobox) lasterr = NULL 0x80070490
+OpenThemeData(Window) lasterr = NULL 0x80070490
+OpenThemeData(Toolbar) lasterr = NULL 0x80070490
+OpenThemeData(Rebar) lasterr = NULL 0x80070490
+OpenThemeData(Status) lasterr = NULL 0x80070490
+OpenThemeData(TreeView) lasterr = NULL 0x80070490
+OpenThemeData(Menu) lasterr = NULL 0x80070490
+OpenThemeData(Progress) lasterr = NULL 0x80070490
+OpenThemeData(Spin) lasterr = NULL 0x80070490
+SysProbe theme = NULL
+GetThemeSysSize[SM 2] = 17 (GetSystemMetrics=17, lasterr=0)
+GetThemeSysSize[SM 3] = 17 (GetSystemMetrics=17, lasterr=0)
+GetThemeSysSize[SM 30] = 18 (GetSystemMetrics=18, lasterr=0)
+GetThemeSysSize[SM 31] = 25 (GetSystemMetrics=25, lasterr=0)
+GetThemeSysSize[SM 32] = 4 (GetSystemMetrics=4, lasterr=0)
+GetThemeSysSize[SM 33] = 4 (GetSystemMetrics=4, lasterr=0)
+GetThemeSysSize[SM 52] = 17 (GetSystemMetrics=17, lasterr=0)
+GetThemeSysSize[SM 53] = 17 (GetSystemMetrics=17, lasterr=0)
+GetThemeSysSize[SM 54] = 18 (GetSystemMetrics=18, lasterr=0)
+GetThemeSysSize[SM 55] = 18 (GetSystemMetrics=18, lasterr=0)
+GetThemeSysInt[TMT_MINCOLORDEPTH] = hr=0x80070006 v=-9
+GetThemeSysInt[TMT_SCROLLBARWIDTH] = hr=0x80070006 v=-9
+GetThemeSysBool[TMT_FLATMENUS] = 1
+GetThemeSysColor[0] = 0xffffff (GetSysColor=0xffffff)
+GetThemeSysColor[1] = 0x956f25 (GetSysColor=0x956f25)
+GetThemeSysColor[2] = 0xfa9632 (GetSysColor=0xfa9632)
+GetThemeSysColor[3] = 0x808080 (GetSysColor=0x808080)
+GetThemeSysColor[4] = 0xffffff (GetSysColor=0xffffff)
+GetThemeSysColor[5] = 0xffffff (GetSysColor=0xffffff)
+GetThemeSysColor[6] = 0x9e9e9e (GetSysColor=0x9e9e9e)
+GetThemeSysColor[7] = 0x000000 (GetSysColor=0x000000)
+GetThemeSysColor[8] = 0x000000 (GetSysColor=0x000000)
+GetThemeSysColor[9] = 0x000000 (GetSysColor=0x000000)
+GetThemeSysColor[10] = 0xffffff (GetSysColor=0xffffff)
+GetThemeSysColor[11] = 0xffffff (GetSysColor=0xffffff)
+GetThemeSysColor[12] = 0x808080 (GetSysColor=0x808080)
+GetThemeSysColor[13] = 0xfa9630 (GetSysColor=0xfa9630)
+GetThemeSysColor[14] = 0xffffff (GetSysColor=0xffffff)
+GetThemeSysColor[15] = 0xf5f5f5 (GetSysColor=0xf5f5f5)
+GetThemeSysColor[16] = 0xa6a6a6 (GetSysColor=0xa6a6a6)
+GetThemeSysColor[17] = 0xa6a6a6 (GetSysColor=0xa6a6a6)
+GetThemeSysColor[18] = 0x000000 (GetSysColor=0x000000)
+GetThemeSysColor[19] = 0xc8c8c8 (GetSysColor=0xc8c8c8)
+GetThemeSysColor[20] = 0xffffff (GetSysColor=0xffffff)
+GetThemeSysColor[21] = 0x6a6a6a (GetSysColor=0x6a6a6a)
+GetThemeSysColor[22] = 0xe3e3e3 (GetSysColor=0xe3e3e3)
+GetThemeSysColor[23] = 0x000000 (GetSysColor=0x000000)
+GetThemeSysColor[24] = 0xffffff (GetSysColor=0xffffff)
+GetThemeSysColor[25] = 0xffffff (GetSysColor=0xffffff)
+GetThemeSysColor[26] = 0xe0e0e0 (GetSysColor=0xe0e0e0)
+GetThemeSysColor[27] = 0xfa9632 (GetSysColor=0xfa9632)
+GetThemeSysColor[28] = 0x808080 (GetSysColor=0x808080)
+GetThemeSysColor[29] = 0xfa9630 (GetSysColor=0xfa9630)
+GetThemeSysColor[30] = 0xffffff (GetSysColor=0xffffff)
+GetThemeSysFont[CAPTION] = hr=0x00000000 h=-13 w=400 face=Tahoma
+GetThemeSysFont[MSGBOX] = hr=0x00000000 h=-11 w=400 face=Tahoma
+Header[HDS_BUTTONS|HORZ text, default font] = HDM_LAYOUT wpos.cy=20 wpos.cx=392  GetWindowRect height=20  GetWindowTheme=NULL
+Header[HDS_BUTTONS|HORZ text, DEFAULT_GUI_FONT] = HDM_LAYOUT wpos.cy=17 wpos.cx=392  GetWindowRect height=17  GetWindowTheme=NULL
+Header[HDS_HORZ (no buttons) text, DEFAULT_GUI_FONT] = HDM_LAYOUT wpos.cy=17 wpos.cx=392  GetWindowRect height=17  GetWindowTheme=NULL
+Header[HDS_BUTTONS|HORZ no text, DEFAULT_GUI_FONT] = HDM_LAYOUT wpos.cy=17 wpos.cx=392  GetWindowRect height=17  GetWindowTheme=NULL
