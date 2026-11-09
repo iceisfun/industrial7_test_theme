@@ -17,7 +17,12 @@ ones; the Win10 decomp uses the same numbers, checked by the `GetThemeInt/Margin
 
 1. Static importers: for every module with `nfuncs>0` (2863 of 3007 in `/api/modules`) ran
    `GET $B/api/modules/<mod>/imports?dll=uxtheme.dll&limit=1000`. The `dll=` filter works (comctl32 returns `total:52`).
-   Result: **76 modules, 518 import entries, 107 distinct uxtheme exports imported** [V-cmd, script `agg.py`].
+   Result of the `dll=uxtheme.dll` scan alone: 76 modules, 518 entries, 107 distinct exports [V-cmd, script `agg.py`; re-run and reproduced in the fact-check].
+   **CORRECTION (fact-check): this filter misses imports made through the API-set stub `ext-ms-win-uxtheme-themes-l1-1-0.dll`**
+   (`/api/modules/conhost/imports?dll=ext-ms-win-uxtheme-themes-l1-1-0.dll` -> `SetWindowTheme`, `delay:true`, `target uxtheme.dll!0x3bb0`).
+   Re-scanning all 2863 modules with that dll name adds 17 modules (conhost, msftedit, edgehtml, udwm, windows.ui.xaml, twinui.pcshell, ...) and 76 entries:
+   **corrected totals: 93 modules, 594 import entries, still 107 distinct exports** (the API-set names `GetUserColorPreference`, `GetColorFromPreference`,
+   `GetImmersiveColorFromColorSetEx`, `GetImmersiveUserColorSetPreference` are the same exports as ordinals 120, 121, 95, 98). See the corrected ranking in 1.2a.
    Delay-load and normal imports are both in the table (`"delay":true` flag); nothing here sees `GetProcAddress` users.
 2. Ordinal names: `GET $B/api/modules/uxtheme/exports?limit=1000` (193 exports: 34 are `SHUNIMPL.#n` forwarders, 91 have no
    name) and `GET $B/api/resolve?ref=uxtheme!<rva>` for each unnamed ordinal gives the PDB function name. Wine's
@@ -36,11 +41,13 @@ ones; the Win10 decomp uses the same numbers, checked by the `GetThemeInt/Margin
 ### 1.1 Headline facts
 
 * **user32, gdi32, gdi32full, win32u do not import uxtheme** [V-api: `/api/modules/<m>/imports?dll=uxtheme.dll` -> `total:0` for each].
-  user32 has zero `Theme` functions except `__xxxClientBroadcastThemeChange` (0x2bc30) [V-api search `Theme` in user32].
+  user32's only `Theme` functions are `__xxxClientBroadcastThemeChange` (0x2bc30) and the `NtUserBroadcastThemeChangeEvent` syscall stub (0x33a40) [V-api search `Theme` in user32, total 5 hits].
   Windows chrome (caption, borders, scrollbars, menus) is themed through the **UserApiHook** path instead, see 1.4.
-* **notepad.exe and conhost.exe do not import uxtheme** (`total:0`). The statement in
-  `docs/design/win10/UXTHEME-OFF-W10-LINK.md` that "conhost delay-imports SetWindowTheme" is **not supported by the corpus**
-  (conhost.exe is in the corpus, import table has no uxtheme) [V-api]. notepad reaches uxtheme only through comctl32 v6.
+* **notepad.exe does not import uxtheme** (`total:0`); it reaches uxtheme only through comctl32 v6.
+  **conhost.exe DOES delay-import `SetWindowTheme`**, but via the API-set stub `ext-ms-win-uxtheme-themes-l1-1-0.dll` (conhost!`DelayLoad_SetWindowTheme` 0x22504, IAT 0xd05f8,
+  schema target `uxtheme.dll!0x3bb0`) [V-api, fact-check]. The original text of this survey ("not supported by the corpus") was WRONG: it came from filtering on `dll=uxtheme.dll`.
+  So `docs/design/win10/UXTHEME-OFF-W10-LINK.md` (conhost delay-imports SetWindowTheme) is correct on this point. Consequence: an armed uxtheme must also be reachable as the
+  `ext-ms-win-uxtheme-themes-l1-1-0` schema host (Industrial7 API-set map), otherwise conhost/udwm/msftedit/XAML imports do not bind.
 * **comctl32 is the dominant consumer**: it imports **52 names** (47 by name + ordinals 47, 49, 72, 75, 131), all as delay-loads
   through `DelayLoad_*` thunks (RVAs 0x9aa09 ... in `.text`, e.g. `DelayLoad_GetThemePartSize` = 0x9aa09, 12 bytes) [V-api].
   Because they are delay-loaded, comctl32 survives a uxtheme that lacks an export only until the first call of it.
@@ -48,6 +55,12 @@ ones; the Win10 decomp uses the same numbers, checked by the `GetThemeInt/Margin
   `GET $B/api/function/comctl32/DelayLoad_GetThemePartSize/callers` returns an empty edge list [V-api]. Call sites were found by grepping decomps instead.
 
 ### 1.2 Ranking of exports by number of importing modules (static imports only)
+
+**Superseded counts (fact-check, direct `uxtheme.dll` imports only; the API-set importers add):** corrected module counts, direct + `ext-ms-win-uxtheme-themes-l1-1-0`:
+SetWindowTheme 29, OpenThemeData 30, CloseThemeData 30, DrawThemeBackground 23, GetThemeColor 20, GetThemeFont 15, IsAppThemed 14, IsThemeActive 12, GetThemeMargins 8,
+GetThemeInt 5, #120 GetUserColorPreference 40, #121 GetColorFromPreference 38, #106 15, #104 13, GetThemeTimingFunction 8, GetThemeAnimationTransform 9, GetThemeAnimationProperty 7;
+unchanged: DrawThemeTextEx 13, Begin/EndBufferedPaint 13, BufferedPaintInit/UnInit 11, GetThemePartSize 8, GetThemeMetric 5, GetThemeBackgroundExtent 7. Largest per-module totals unchanged (comctl32 52, shell32 37, explorerframe 35).
+Ranks 1-3 are therefore OpenThemeData/CloseThemeData (30), SetWindowTheme (29) after the immersive-colour ordinals #120/#121. The table below is the original direct-import count.
 
 (count = modules; ordinal names resolved from the Win10 PDB via `/api/resolve`. "#N" = imported by ordinal.)
 
@@ -114,8 +127,7 @@ Other ordinals other modules import (resolved names): 1 QueryThemeServices, 7 Ge
 126 DrawTextWithGlow, 128 ClearDpiInfo, 132 ShouldAppsUseDarkMode, 133 AllowDarkModeForWindow, 135 SetPreferredAppMode,
 136 FlushMenuThemes, 137 IsDarkModeAllowedForWindow, 138 ShouldSystemUseDarkMode, 139 IsDarkModeAllowedForApp.
 
-Wine cross-check [V-src `dlls/uxtheme/uxtheme.spec`]: Wine exports ordinals 1-4, 7-36, 43-49, 60-63, 95, 96, 98, 100, 104,
-132-138 only. **Wine has no ordinal 72, 75, 106, 119-123, 125, 126, 128, 131, 139**, and its ordinal 49 is an unnamed stub
+Wine cross-check [V-src `dlls/uxtheme/uxtheme.spec`; fact-check re-extracted: 1 2 3 4 7 8 9 10 11 13-36 43-49 60 61 62 63 95 96 98 100 104 132 133 135 136 137 138]: Wine exports only those ordinals (note: no 12, 134 either). **Wine has no ordinal 72, 75, 106, 119-123, 125, 126, 128, 131, 139**, and its ordinal 49 is an unnamed stub
 (`49 stub @`). So a stock Win10 comctl32 6.10.19041 bound to Wine's uxtheme loses DrawThemeIconEx, GetBufferedPaintBitsEx and
 ThemeForwardCapturedMouseMessage (the comctl32 delay-loader would fail on first use); a real Win10 shell stack additionally
 needs 120/121 (25 and 23 importers).
@@ -195,7 +207,7 @@ needs 120/121 (25 and 23 importers).
 (table at RVA 0x1f3410, strings read with `/api/bytes/comctl32`):
 `Button` (id 0 and out of range), `Button-OK;Button` (1), `Button-CANCEL;Button` (2), `Button-ABORT;Button` (3),
 `Button-RETRY;Button` (4), `Button-IGNORE;Button` (5), `Button-YES;Button` (6), `Button-NO;Button` (7), `Button-CLOSE;Button` (8),
-`Button-HELP;Button` (9), `Button-TRYAGAIN;Button` (10), `Button-CONTINUE;Button` (11). It also calls
+`Button-HELP;Button` (9), `Button-TRYAGAIN;Button` (10), `Button-CONTINUE;Button` (11), `Button-APPLY;Button` (12) [fact-check: id 12 was missing; table re-read from the 13 pointers at RVA 0x1f3410 via `/api/bytes`; the `> 0xc` guard at 0x62bfc line 25 confirms 0..12]. It also calls
 `EnableThemeDialogTexture(GetParent(hwnd), 2)` and reads `SystemParametersInfoW(0x42 = SPI_GETHIGHCONTRAST)` to set a high-contrast bit (0x10 at +0x58).
 An armed uxtheme must therefore accept semicolon-separated class lists and resolve to the first defined class.
 
@@ -264,7 +276,7 @@ Everything below is the Win10 comctl32 6.10.19041.1110 decomp, read with `curl $
 **4.1 Layout height (the number a ListView/parent applies).** `Header_OnLayout` 0x4b2a8 (`HDM_LAYOUT`):
 
 ```
-edge   = DPISCALEINFO::GetLegacyScaledEdgeHeight(HD+0x34)      // SM_CYEDGE scaled; 2 at 96 dpi [INF: i7 tests use 2]
+edge   = DPISCALEINFO::GetLegacyScaledEdgeHeight(HD+0x34)      // = MulDiv(GetSystemMetrics(0x2e=SM_CYEDGE), dpiY, 96) [V-api decomp 0x4b384]; 2 at 96 dpi with stock metrics
 height = HD[+0x4c] + 2*edge                                     // HD+0x4c = text height (4.2)
 if (HD[+0x130] != 0 && height <= HD[+0x160])  height = HD[+0x160]   // themed AND theme minimum >= computed -> theme wins
 if (style & HDS_FILTERBAR /*0x100*/)  height += HD[+0x4c] + 1 + 2*edge
@@ -310,7 +322,7 @@ content margins (min 1); `TS_DRAW` returns `GetDrawnImageSize`. For border-fill 
 **4.4 The two numbers.**
 
 * **20 (classic, Industrial7 today):** `HD[+0x130] == 0` -> `height = textcy + 2*edge`. With a 16 px font and a 2 px edge that is 20
-  - this is exactly what Industrial7's `Header::layout` computes (`crates/w10-comctl32-lv/src/hdr/layout.rs:36-47`, test
+  - this is exactly what Industrial7's `Header::layout` computes (`crates/w10-comctl32-lv/src/hdr/layout.rs:57-70` (fact-check: line range corrected; the code is `height = text_cy + 2*SM_CYEDGE; if theme.active && height <= theme.min_height { height = min_height }`, same shape as the decomp), test
   `tests/hdr_layout.rs:15-21` "layout.pos 0,0,400,20 ... 16 px font and 2 px edge").
 * **24 (Win10 themed):** `HD[+0x130] != 0`, the text path gives `textcy + 2*edge` <= `HD[+0x160]`, so `height = HD[+0x160] =
   max(GetThemePartSize(HEADER, HP_HEADERITEM=1, 0, TS_TRUE).cy, GetThemePosition(HEADER, 1, 0, TMT_MINSIZE).y)`.
@@ -395,5 +407,35 @@ The header fix needs only item 1 + `GetThemePartSize`/`GetThemePosition`/`GetThe
 * UNKNOWN: any Win10 numeric theme value (HEADERITEM size/min size, margins, etc.): this role only locates the questions.
 * The `[INF]` rows (Listbox, Link, Hotkey/IPAddress, TaskDialog markup, comctl32 ScrollBar vs user32 ScrollBar ownership) were not traced to their draw code.
 * Static imports only: modules that `GetProcAddress` uxtheme (Chrome, Industrial7's own `w10-comctl32-lv`) or load it via the UserApiHook are invisible to the 107-name count. Modules not in the 3007-module corpus index were not scanned.
-* `DPISCALEINFO::GetLegacyScaledEdgeHeight` was not decompiled; its 96-dpi value (2) is inference from SM_CYEDGE and from Industrial7's tests.
+* `DPISCALEINFO::GetLegacyScaledEdgeHeight` (0x4b384) was decompiled in the fact-check: `MulDiv(GetSystemMetrics(0x2e = SM_CYEDGE), dpi, 0x60)`. SM_CYEDGE=2 at 96 dpi is the stock value but still a runtime metric, not recorded here (UNVERIFIED on the Win10 oracle; add `GetSystemMetrics(SM_CYEDGE)` to the probe list).
 * The `DAT_171c045c0` header state table was read as raw bytes (`/api/bytes/comctl32?rva=0x2045c0&len=48` -> ints 1..12); the mapping of its columns to hot/pressed/sorted comes from the control-flow in `Header_DrawItem` and the HEADERITEMSTATES order, not from a symbol.
+
+## 9. Verification (adversarial fact-check)
+
+Checked by re-running API calls / commands (base `B=http://docker1.dev.moonlightcompanies.com:8765`):
+
+| claim | result |
+|---|---|
+| `Header_OnLayout` 0x4b2a8 formula (+0x4c, 2*edge, +0x130 gate, +0x160, FILTERBAR 0x100, HIDDEN 8, flags 0x14) | CONFIRMED verbatim from decomp |
+| `_Header_InitTheme` 0x85d98 (parts 1/5/4/7, TS_TRUE, `GetThemePosition(...,0xd4b)`, HRESULTs of PartSize ignored, `local_28` uninitialised) | CONFIRMED |
+| `Header_NewFont` 0x86174 themed `"M"` extent flags 0x800 with `"..."` fallback; `Header_OnCreate` calls NewFont(NULL) before zeroing +0x130 and InitTheme; WM_THEMECHANGED (0x31a) only calls InitTheme; WM_SETFONT calls NewFont only when font differs | CONFIRMED (0x85c50 lines 42-48, 0x689b0 lines 50-52, 224-227) |
+| TMT_MINSIZE=3403, SIZINGBORDERWIDTH 1201, COMPOSITED 2204, COMPOSITEDOPAQUE 2219, BORDERSIZE 2403, GLYPHINDEX 2418, GLYPHFONT 2601, CONTENTMARGINS 3602, SIZINGMARGINS 3601, CAPTIONMARGINS 3603, FILL/TEXTCOLOR 3802/3803, ANIMATIONDURATION 5006, TRANSITIONDURATIONS 6000, HALIGN/VALIGN/ICONEFFECT 4005/4007/4009; HP_*/HIS_*/HSAS_*/HDDS_* values; WP_ 18/19/30-37; MENU parts; SBP/TABP/TKP/SP/TTP/RP/PP/EP/CP/BP/LVP/TVP/TP/SPNP/DP | CONFIRMED against `/usr/x86_64-w64-mingw32/include/vsstyle.h`, `vssym32.h` |
+| Header state table 0x2045c0 = ints 1..12, row stride 0x18, column offsets +0/+4/+8/+0xc/+0x10/+0x14 | CONFIRMED (`/api/bytes`, `Header_DrawItem` 0x5037c lines 151-170) |
+| `GetThemePartSize` 0x14a20 (border-fill: TS_MIN 2*bs, TS_TRUE 2*bs+1) and `CImageFile::GetPartSize` 0x14edc | CONFIRMED |
+| Spot-check of call sites: 0x98a0c (extent 1,0), 0x3a688 (SP_GRIPPER 3 TS_DRAW), 0xb0c0 (SM 3 / PartSize), 0xe8f40 (GetThemeInt 0x4b1), 0x112fc4 (TTP_CLOSE 5,1,TS_DRAW), 0x44734 (part+2,1,TS_DRAW), 0x148a90 (MonthCal part 10 TS_TRUE), 0x11a708 (sort arrow 4, 2-(up!=0)), 0x5009c (0,.. / 1,7|8 / 7,1|2), 0x8384 (Tab flags 0x2180, 0x40, +0x3c|2, +0x8c/+0x90) | CONFIRMED |
+| Importer scan: comctl32 `total:52`, 47 named + ordinals 47,49,72,75,131, all `delay:true`; user32/gdi32/gdi32full/win32u/notepad `total:0`; 76 modules/518 entries/107 names for `dll=uxtheme.dll`; the per-name module counts | REPRODUCED for the direct scan, but **INCOMPLETE**: see corrections |
+| ordinals 49/72/75/131 names (`/api/resolve`), ThemeInitApiHook ordinal 193 @0xcda0, `InitUserApiHook` 0x22ce0 sole caller `__ClientLoadLibrary` 0x22a50, 193 exports with 34 SHUNIMPL | CONFIRMED |
+| Wine ordinal list | CONFIRMED, wording tightened (no 12, no 134) |
+| Industrial7 manifest counts (109 zero, 49 hr, 25 ehandle, 4 open, 2 theme_query, 1 each set_theme/set_attr/dlg_texture/comp_off), registry row unwired, `E_HANDLE 0x80070006`, `Theme` struct and `Host::theme_info()` default, tests `min_height: 24`, docs line citations (OWNED_STATUS 252/637, USER32 273, COMCTL32 48, SHELL_READINESS 96), chrome_imports.tsv 6 names | CONFIRMED |
+
+Errors found and fixed in place:
+
+1. **conhost claim was wrong.** conhost delay-imports `SetWindowTheme` through the API set `ext-ms-win-uxtheme-themes-l1-1-0.dll`; the survey's `dll=uxtheme.dll` filter cannot see API-set imports. The i7 design doc was right. Importer totals corrected from 76 to 93 modules and 518 to 594 entries (still 107 distinct exports); ranking counts corrected (1.2). New importers via the API set: conhost, msftedit, edgehtml, udwm, windows.ui.xaml(+host), twinui.pcshell, applicationframe, and others. Practical consequence added: an armed uxtheme must be reachable under the schema name too.
+2. The dialog button class table has **13** entries (id 12 = `Button-APPLY;Button`); the doc listed 12.
+3. `GetLegacyScaledEdgeHeight` resolved (`MulDiv(GetSystemMetrics(SM_CYEDGE), dpi, 96)`), previously guessed.
+4. user32 also contains `NtUserBroadcastThemeChangeEvent` (not just `__xxxClientBroadcastThemeChange`).
+5. `layout.rs` citation range corrected (57-70).
+
+Still UNVERIFIED (not re-checked): the full list of ~300 comctl32 call sites beyond the ~12 spot-checked, the `[INF]` rows (Listbox, Link, Hotkey/IPAddress), the 144 modules with `nfuncs=0` were scanned (no uxtheme imports) but modules outside the 3007-module index were not, the user32 `tagUSERAPIHOOK` field list (only the head of `InitUserApiHook` re-read), and the "24 px" origin itself (still UNKNOWN: needs the Win10 probe of HEADERITEM TS_TRUE / TMT_MINSIZE and the real HDM_LAYOUT result; the formula in 4.1-4.4 is verified, the numeric inputs are not).
+
+Missing finding worth adding: because `_Header_InitTheme` takes `max(PartSize.cy, MINSIZE.y)` and `Header_OnLayout` only substitutes when `text_cy + 2*edge <= +0x160`, **any** recorded value >= 20 at 96 dpi yields the minimum; a value below 20 would be invisible. At 125%/150% DPI the same formula applies with a DPI-selected theme image, so probes must be taken per DPI (already in section 7).
