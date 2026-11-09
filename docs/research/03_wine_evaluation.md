@@ -105,7 +105,7 @@ Corpus base: `http://docker1.dev.moonlightcompanies.com:8765`.
 * `psz == NULL` => `0x80004003` (E_POINTER). **Wine does not check** (it would dereference NULL).
 * BorderFill (`bgtype == 1`): `TS_MIN` => `cx=cy=max(1, 2*borderSize)`; `TS_TRUE` => `2*borderSize+1`; **`TS_DRAW` =>
   `0x80070057` (E_INVALIDARG)**. Wine: `TS_MIN` = `2*bs` (no clamp to 1), `TS_TRUE`/`TS_DRAW` = `2*bs+1` (S_OK).
-* Image parts go to `CImageFile::GetPartSize` (`/api/function/uxtheme/%3FGetPartSize%40CImageFile...`, RVA 0x14edc):
+* Image parts go to `CImageFile::GetPartSize` (symbol `?GetPartSize@CImageFile@@QEAAJPEBVCRenderObj@@PEAUHDC__@@PEBUtagRECT@@W4THEMESIZE@@PEAUtagSIZE@@@Z`, RVA 0x14edc; note `PEBVCRenderObj`, the `PEAV` spelling 404s):
   `TS_MIN` => `max(1, left+right content margin)` x `max(1, top+bottom content margin)` of `GetScaledContentMargins`;
   `TS_TRUE` => selected image width/height (or stretched true-size result); `TS_DRAW` => `GetDrawnImageSize(...)`;
   other => `0x80070057`. **Wine's `TS_MIN` returns the image size, i.e. it is wrong for Win10.** This is the main semantic
@@ -197,7 +197,7 @@ Parent client width 392; header created with `HDS_BUTTONS|HDS_HORZ` (cy from `HD
 | Proton 11.0, v6 manifest, theme **off** (`proton_v6_off`) | 0 | same (v6) | NULL | **20** | **17** |
 | Proton 11.0, no manifest (`proton_v5`) | 1 | `system32\COMCTL32.dll`, 5.81.4704 | NULL (v5 does not open theme) | **20** | **17** |
 | Proton 11.0, no manifest, theme off (`proton_v5_off`) | 0 | v5 | NULL | **20** | **17** |
-| wine 9.0, v6 manifest, theme on (`wine9_v6`) | 1 | winsxs v6 file | set | **20** | **17** |
+| wine 9.0, v6 manifest, theme on (`wine9_v6`) | 1 | winsxs file, but DllGetVersion reports 5.81.2919 (so NOT necessarily v6 code; fact-check correction) | set | **20** | **17** |
 | wine 9.0, v6 manifest, theme off (`wine9_v6_off`) | 0 | winsxs v6 file | NULL | **20** | **17** |
 | wine 9.0, no manifest (`wine9_v5`) | 1 | system32 | set | **20** | **17** |
 | **Win10 10.0.19041 (per owner)** | 1 | comctl32 6.10.19041.1110 | set | **24** | not measured |
@@ -383,3 +383,24 @@ Legend: **S** = usable as a regression *sanity* check against Wine (cheap, headl
 * Win10 `GetThemeInt/GetThemeMetric/GetThemeMargins/GetThemeFilename/GetThemeSysColor` decomps were not read end to end (only
   `GetThemePosition`/`ExternalGetPosition` and `GetThemeSysSize`).
 * Not tried: winetricks themes, Xephyr (cannot run without a host display here), comctl32 listview/toolbar Wine tests, high-DPI (`LOGPIXELSY` stayed 96).
+
+
+## 9. Verification (adversarial fact-check pass)
+
+Re-checked independently (commands re-run, not trusting the original text):
+
+* `_Header_InitTheme` (RVA 0x85d98), `Header_OnLayout` (0x4b2a8), `Header_NewFont` re-fetched from the corpus API. The call set in section 3.2 is VERIFIED exactly: parts 1, 5, 4, 7, state 0, hdc NULL, TS_TRUE, `GetThemePosition(theme,1,0,0xd4b)`, and the `max` only when the HRESULT is non-negative. `Header_OnLayout` max-with-`+0x160` only when theme (`+0x130`) is non-null: VERIFIED. `Header_NewFont` uses `GetThemeTextExtent(...,1,0,L"M",-1,0x800,...)` and a fallback `GetTextExtentPointW(L"...")`: VERIFIED.
+* Constants: TMT_MINSIZE = 3403 = 0xd4b (vssym32.h:342); HP_HEADERITEM=1, SORTARROW=4, DROPDOWN=5, OVERFLOW=7 (vsstyle.h:647-653): VERIFIED.
+* `GetThemePartSize` decomp (0x14a20): E_HANDLE 0x80070006, psz NULL -> 0x80004003, BorderFill MIN=max(1,2*bs), TRUE=2*bs+1, other (incl. DRAW) -> 0x80070057: VERIFIED. `CImageFile::GetPartSize` (0x14edc): TS_MIN = max(1, summed scaled content margins): VERIFIED. Wine draw.c:731-737 has the FIXME and `TS_MIN` falling through to `TS_TRUE`: VERIFIED. `ExternalGetPosition` (0x6b94): NULL out -> E_POINTER, missing -> 0x80070490 (-0x7ff8fb70): VERIFIED.
+* Wine header.c:1636, :2095 and `VERT_BORDER 4` (header.c:93); tests/header.c:1756-1762 comment; tests/system.c:518-529 (E_POINTER / E_PROP_ID_UNSUPPORTED), :876 (`aero.msstyles`), :1756, :2799; 15 `todo_wine` in system.c (grep count 15); wine.inf.in:1030 ThemeActive "1": VERIFIED.
+* Header-height table: grepped all `out/*_v5*.txt`/`*_v6*.txt` header lines: 20 (default font) and 17 (GUI font) in all 8 files; `GetWindowTheme` set/NULL as tabulated: VERIFIED. `proton_v6.txt` lines 23-27 InitTheme output (6x24, 3x24, 13x5, 8x21, MINSIZE 0x80070490): VERIFIED. Wine 9 vs 11 differ only in version strings, comctl32 DllGetVersion and sys colours 17 and 26 (diff): VERIFIED.
+* Wine test results: saved logs `uxtheme_test_proton.txt` (22254 tests, 16 todo, 3 failures, 4 skipped), wine9 crash line, `cc_header.txt` (1053 tests, 0 failures): VERIFIED against the logs. Not re-run.
+* Environment: `ss -x | grep -c X11-unix` = 43 now, matching the claimed before/after; no Xvfb or wineserver processes remain.
+
+Corrections made: the wine 9.0 v6 row (its comctl32 reports 5.81, so it is not evidence about v6 behaviour); the wrong CImageFile URL spelling.
+
+Caveats / added findings:
+* UNVERIFIED: whether Win10's "24" is the per-state frame height or the whole strip: `CImageFile::GetPartSize` TS_TRUE returns `DIBINFO+0xc/+0x10` (or a stretch result) and which of those is the frame size was not decoded. The owner's 24 is the only Win10 data point.
+* The `system.c:2799` "failure" is a `win_skip` (also guarded by `GetImmersiveColorNamedTypeByIndex`, system.c:2797) which Wine counts as a failure; environmental, not a behavioural divergence.
+* `Header_OnLayout` requires the header theme handle non-NULL, so any implementation must make `OpenThemeData(L"Header")` succeed; fixing `GetThemePartSize` alone is insufficient.
+* Not re-checked: section 4.2 values beyond the header rows, section 5.3 DPI-test line numbers, re-execution of the Proton/Xvfb recipe.
