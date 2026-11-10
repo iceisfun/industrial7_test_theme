@@ -1,0 +1,22 @@
+== /home/iceisfun/w10lab/runs/theme-1110-050234-1762330/serial.combined
+__env                        OK         0x0         60ms 
+__env_v5                     OK         0x0         58ms 
+filehash                     NOSUMMARY  0x0         52ms 
+probe_draw                   OK         0x0         6082ms 
+probe_draw_nomanifest        OK         0x0         36ms 
+probe_1_log                  OK         0x0         590ms 
+probe_1.csv                  OK         0x0         42447ms 
+probe_2_log                  OK         0x0         227ms 
+probe_2.csv                  OK         0x0         9181ms 
+probe_3_log                  OK         0x0         152ms 
+probe_3.csv                  OK         0x0         8107ms 
+probe_4_log                  OK         0x0         71ms 
+probe_4.csv                  OK         0x0         1256ms 
+boot: DONE marker seen
+  I7VM: logon Tue 11/10/2026  4:43:21.68 
+  I7VM: payload D:\i7run 
+  @@I7 CFG run config=hc mode=runtime Tue 11/10/2026  4:43:21.71 
+  @@I7 CFG apply hc  4:43:21.73 
+  THEMESET hc on ok=1 err=1460 ms=187 flags_before=0x7E flags_after=0x7F
+  @@I7 CFG active hc  4:43:32.15 
+  I7VM: payload exit 0 

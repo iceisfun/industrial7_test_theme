@@ -1,0 +1,28 @@
+== /home/iceisfun/w10lab/runs/dhc-1110-080044-2365778/o/serial.log
+__hcnothemes_env             OK         0x0         27ms 
+__hcnothemes_env_v5          OK         0x0         39ms 
+__hcnothemes_filehash        OK         0x0         18ms 
+probe_draw_hcnothemes        OK         0x0         5844ms 
+probe_drawnm_hcnothemes      OK         0x0         24ms 
+probe_hcnothemes_1_log       OK         0x0         440ms 
+probe_hcnothemes_1.csv       OK         0x0         36289ms 
+probe_hcnothemes_2_log       OK         0x0         135ms 
+probe_hcnothemes_2.csv       OK         0x0         7505ms 
+probe_hcnothemes_3_log       OK         0x0         142ms 
+probe_hcnothemes_3.csv       OK         0x0         7442ms 
+probe_hcnothemes_4_log       OK         0x0         70ms 
+probe_hcnothemes_4.csv       OK         0x0         1264ms 
+boot: DONE marker seen
+  I7VM: logon Tue 11/10/2026  8:33:58.62 
+  I7VM: payload D:\i7run 
+  @@I7 CFG apply classic  8:33:58.71 
+  @@I7 CFG active classic  8:34:01.84 
+  @@I7 CFG apply classicdark  8:35:07.35 
+  THEMESET broadcast ImmersiveColorSet ret=1
+  @@I7 CFG active classicdark  8:35:28.21 
+  @@I7 CFG step light  8:36:33.09 
+  THEMESET broadcast ImmersiveColorSet ret=1
+  @@I7 CFG apply hcnothemes  8:36:33.23 
+  THEMESET hc on ok=1 err=0 ms=0 flags_before=0x7E flags_after=0x7F
+  @@I7 CFG active hcnothemes  8:36:46.51 
+  I7VM: payload exit 0 

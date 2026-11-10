@@ -1,0 +1,13 @@
+@@I7 BEGIN __darkhc_filehash "C:\i7w\filehash.exe"
+FILEHASH C:\Windows\resources\themes\Aero\Aero.msstyles size=1322640 sha256=33ec7c8693e1d073cf659b9bcf013956b045af7e620f581e4ce03356e127331f
+FILEHASH C:\Windows\resources\themes\Aero\AeroLite.msstyles size=862352 sha256=54445537b74f1fa332808b997e71e4d6db567061f072eb75aed636f702c68df4
+FILEHASH C:\Windows\resources\Ease of Access Themes\hcblack.theme size=2589 sha256=53d43c9ac2875859cf8b671278984852006a8b93859e5cafab30f0be02259e57
+FILEHASH C:\Windows\resources\Ease of Access Themes\hcwhite.theme size=2598 sha256=dcd82e6a95b1c8c3334de2ca915e1738cbd2a51fe566f80185a293d74a9c1a43
+FILEHASH C:\Windows\resources\Themes\aero.theme size=1918 sha256=cdf0440a375c4d4a180a358ea3c87448482622fbc71833bc797ec1410e54bb01
+FILEHASH C:\Windows\resources\Themes\dark.theme MISSING err=2
+FILEHASH C:\Windows\resources\Themes\light.theme size=1940 sha256=e3e325b8ae75590cf6de547048fb39a0b50e91eb1f1ec4e4678c5e78517bc284
+FILEHASH C:\Windows\System32\uxtheme.dll size=627200 sha256=1fef44e281400e5d1a68ec4f77e4e1e3956cb17e668c38b3515265932f70352d
+FILEHASH C:\Windows\System32\themeui.dll size=399872 sha256=83ab5e05d24036abdf98c302b08694ac1b6bde9b03934870cc8795093851335f
+FILEHASH C:\Windows\System32\themeservice.dll size=70656 sha256=8dd5348a4983c376f63e6b209227d4d02300555f8c80a0e0db2ea16074abc334
+
+@@I7 END __darkhc_filehash exit=0x0 ms=18 timeout=0 bytes=1293

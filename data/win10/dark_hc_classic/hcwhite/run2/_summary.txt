@@ -1,0 +1,33 @@
+== /home/iceisfun/w10lab/runs/dhc-1110-093752-2563317/o/serial.log
+__hcwhite_env                OK         0x0         29ms 
+__hcwhite_env_v5             OK         0x0         26ms 
+__hcwhite_filehash           OK         0x0         17ms 
+probe_draw_hcwhite           OK         0x0         5916ms 
+probe_drawnm_hcwhite         OK         0x0         26ms 
+probe_hcwhite_1_log          OK         0x0         500ms 
+probe_hcwhite_1.csv          OK         0x0         41252ms 
+probe_hcwhite_2_log          OK         0x0         152ms 
+probe_hcwhite_2.csv          OK         0x0         8060ms 
+probe_hcwhite_3_log          OK         0x0         153ms 
+probe_hcwhite_3.csv          OK         0x0         7985ms 
+probe_hcwhite_4_log          OK         0x0         74ms 
+probe_hcwhite_4.csv          OK         0x0         1251ms 
+boot: DONE marker seen
+  I7VM: logon Tue 11/10/2026 10:03:30.16 
+  I7VM: payload D:\i7run 
+  @@I7 CFG apply hc 10:03:30.24 
+  THEMESET hc on ok=1 err=1460 ms=187 flags_before=0x7E flags_after=0x7F
+  @@I7 CFG active hc 10:03:40.65 
+  @@I7 CFG apply hcwhite 10:04:47.29 
+  THEMESET hc on ok=1 err=0 ms=0 flags_before=0x7F flags_after=0x7F
+  @@I7 CFG active hcwhite 10:04:57.49 
+  @@I7 CFG step hc-off 10:06:03.18 
+  THEMESET hc off ok=1 err=0 ms=16 flags_before=0x7F flags_after=0x7E
+  @@I7 CFG apply dark 10:06:13.38 
+  THEMESET broadcast ImmersiveColorSet ret=1
+  @@I7 CFG active dark 10:06:13.57 
+  @@I7 CFG apply darkhc 10:07:16.62 
+  THEMESET broadcast ImmersiveColorSet ret=1
+  THEMESET hc on ok=1 err=0 ms=0 flags_before=0x7E flags_after=0x7F
+  @@I7 CFG active darkhc 10:07:26.97 
+  I7VM: payload exit 0 

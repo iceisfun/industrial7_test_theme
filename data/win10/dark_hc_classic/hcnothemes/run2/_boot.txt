@@ -1,0 +1,13 @@
+I7VM: logon Tue 11/10/2026 10:32:45.42 
+I7VM: payload D:\i7run 
+@@I7 CFG apply classic 10:32:45.50 
+@@I7 CFG active classic 10:32:48.64 
+@@I7 CFG apply classicdark 10:33:53.06 
+THEMESET broadcast ImmersiveColorSet ret=1
+@@I7 CFG active classicdark 10:34:14.14 
+@@I7 CFG step light 10:35:17.34 
+THEMESET broadcast ImmersiveColorSet ret=1
+@@I7 CFG apply hcnothemes 10:35:17.50 
+THEMESET hc on ok=1 err=0 ms=0 flags_before=0x7E flags_after=0x7F
+@@I7 CFG active hcnothemes 10:35:30.84 
+I7VM: payload exit 0 

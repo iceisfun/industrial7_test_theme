@@ -1,0 +1,4 @@
+@@I7 BEGIN probe_darkhc_3_log "C:\i7w\probe_record.exe" --table C:\i7w\probe_table.csv --label darkhc_darkforce --prio 2 --sweep std --comctl v6 --dark force --out C:\i7w\probe_darkhc_3.csv
+done: C:\i7w\probe_darkhc_3.csv
+
+@@I7 END probe_darkhc_3_log exit=0x0 ms=147 timeout=0 bytes=33

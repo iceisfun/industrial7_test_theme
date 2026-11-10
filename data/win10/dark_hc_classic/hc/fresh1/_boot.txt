@@ -1,0 +1,9 @@
+== /home/iceisfun/w10lab/runs/theme-1110-050234-1762330/serial.combined
+I7VM: logon Tue 11/10/2026  4:43:21.68 
+I7VM: payload D:\i7run 
+@@I7 CFG run config=hc mode=runtime Tue 11/10/2026  4:43:21.71 
+@@I7 CFG apply hc  4:43:21.73 
+THEMESET hc on ok=1 err=1460 ms=187 flags_before=0x7E flags_after=0x7F
+@@I7 CFG active hc  4:43:32.15 
+@@I7 DONE  4:44:40.79 
+I7VM: payload exit 0 
