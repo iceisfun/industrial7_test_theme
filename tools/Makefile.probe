@@ -1,0 +1,18 @@
+# Builds the Win10 recorder:  make -f tools/Makefile.probe   (from the repo root; also: make probe)
+# Output: build/probe_record.exe  (+ build/probe_table.csv copied next to it, ready to copy to the Windows box)
+CC      = x86_64-w64-mingw32-gcc
+WINDRES = x86_64-w64-mingw32-windres
+CFLAGS  ?= -O1 -Wall -Wno-unused-function -Wno-unused-variable -Wno-format
+all: build/probe_record.exe build/probe_table.csv
+build/probe_record.rc.o: tools/probe_record.rc tools/probe_app.manifest tools/probe_ctl6.manifest
+	@mkdir -p build
+	cd tools && $(WINDRES) probe_record.rc ../build/probe_record.rc.o
+build/probe_record.exe: tools/probe_record.c build/probe_record.rc.o
+	$(CC) $(CFLAGS) -o $@ tools/probe_record.c build/probe_record.rc.o -static -lkernel32 -luser32 -lgdi32 -ladvapi32
+build/probe_table.csv: tools/probe_table.csv
+	@mkdir -p build; cp $< $@
+tools/probe_table.csv: tools/gen_probe_table.py
+	python3 tools/gen_probe_table.py
+clean:
+	rm -f build/probe_record.exe build/probe_record.rc.o build/probe_table.csv
+.PHONY: all clean

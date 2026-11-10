@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- process manifest: Windows 10 compatibility only (no comctl32 dependency: the exe stays on comctl32 v5 unless
+     probe_record activates probe_ctl6.manifest via an activation context, see --comctl) -->
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity type="win32" name="industrial7.probe_record" version="1.0.0.0" processorArchitecture="amd64"/>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1"><application>
+    <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}"/>
+  </application></compatibility>
+</assembly>
