@@ -1,0 +1,27 @@
+# VM helper binaries:  make -f tools/Makefile.vm   (from the repo root)
+#   build/vm/vmrun.exe      guest runner (timeout, job object, COM1 framing) used by tools/vm_run.sh
+#   build/vm/themeenv.exe   theme environment report, process default comctl32 v5 (compat-only manifest)
+#   build/vm/themeenv6.exe  same, embedded comctl32 v6 dependency (process default comctl32 v6)
+#   build/vm/themeset.exe   runtime config switches (high contrast, WM_SETTINGCHANGE broadcast) for tools/theme_config.sh
+CC      = x86_64-w64-mingw32-gcc
+WINDRES = x86_64-w64-mingw32-windres
+CFLAGS  ?= -O1 -Wall -Wno-unused-function -Wno-unused-variable -Wno-format
+B = build/vm
+all: $(B)/themeset.exe $(B)/vmrun.exe $(B)/themeenv.exe $(B)/themeenv6.exe $(B)/ctl6.manifest
+$(B)/%.res.o: tools/vm/%.rc tools/vm/app_v6.manifest tools/probe_app.manifest
+	@mkdir -p $(B)
+	cd tools/vm && $(WINDRES) $*.rc ../../$@
+$(B)/vmrun.exe: tools/vm/vmrun.c
+	@mkdir -p $(B)
+	$(CC) $(CFLAGS) -o $@ $< -static
+$(B)/themeenv.exe: tools/vm/themeenv.c $(B)/app_v5.res.o
+	$(CC) $(CFLAGS) -o $@ $^ -static -luser32 -lgdi32 -ladvapi32
+$(B)/themeenv6.exe: tools/vm/themeenv.c $(B)/app_v6.res.o
+	$(CC) $(CFLAGS) -o $@ $^ -static -luser32 -lgdi32 -ladvapi32
+$(B)/themeset.exe: tools/vm/themeset.c
+	@mkdir -p $(B)
+	$(CC) $(CFLAGS) -o $@ $< -static -luser32
+$(B)/ctl6.manifest: tools/probe_ctl6.manifest
+	@mkdir -p $(B); cp $< $@
+clean: ; rm -rf $(B)
+.PHONY: all clean
