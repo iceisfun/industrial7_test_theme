@@ -45,7 +45,11 @@ truncated, timed out, crashed without SUMMARY, SUMMARY inconsistent, or the boot
    tests/failed/skipped equal the counted RUN/OK/FAIL/SKIP lines (BADSUMMARY otherwise). Data files
    (`probe_N.csv`) are written without the frame lines. Also written: `_summary.txt`, `_boot.txt` (everything
    outside frames: config-stage output, hook lines), `_serial_bootN.log` (raw).
-5. Batching: at most `--per-boot` exes (default 40) per boot; a boot is capped by `ORACLE_TIMEOUT` (default
+5. Hung-boot watchdog: observed once in ~14 boots, the guest reached the desktop but the logon hook never wrote
+   COM1 (empty serial.log, screen frozen; seen with a QMP `screendump`). If serial.log is still empty `SILENT_S`
+   (default 240) s after the oracle lock was taken, vm_run.sh stops that guest via QMP `quit` on the run's
+   qmp.sock and retries the boot once.
+6. Batching: at most `--per-boot` exes (default 40) per boot; a boot is capped by `ORACLE_TIMEOUT` (default
    900 s; keep a boot under ~15 min). Exes that never started (boot cut short) get one retry boot.
 
 Measured costs: a boot with a handful of exes takes ~40 s wall time end to end (Windows is logged on ~30 s after

@@ -82,5 +82,7 @@ Consequences:
   run in the default configuration; t_note anything that changes with configuration.
 * A test needing comctl32 v6 controls: `tests/<area>/app.rc` (process manifest) or an activation context
   (docs/VM_RUN.md). Without it the controls are v5 and unthemed even though uxtheme is active.
-* The test process runs elevated? Built-in Administrator; `__env.txt` reports `TokenElevation` (added after the
-  first runs; see the latest results/win10/__env.txt).
+* Tests run **elevated**: TokenElevation elevated=1, TokenElevationType 1 (built-in Administrator, no split
+  token). Behaviour that differs for a limited user is not observable here.
+* Repeatability: two probe_record `--prio 0` runs in different boots (aero) differ in exactly one of 509 keys,
+  GetSystemMetrics(93) (undocumented index, 596 vs 600); every theme value was identical.

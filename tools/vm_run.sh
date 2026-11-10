@@ -132,18 +132,55 @@ make_payload() {   # $1 = payload dir, $2 = probes? (1/0), rest = exe paths
   } > "$pay/run.cmd"
 }
 
+# runner OUTDIR [env...]: one win10_run.sh call with a watchdog. Seen once (2026-11-09): the guest reached the
+# desktop but the logon hook never wrote COM1 and the display froze; without the watchdog that costs the whole
+# ORACLE_TIMEOUT.  If serial.log is still empty SILENT_S (default 240) s after the oracle lock was taken, the
+# guest is stopped through QMP "quit" and the boot is retried once.
+qmp_quit() { python3 - "$1" <<'PY' 2>/dev/null || true
+import socket, json, sys
+s = socket.socket(socket.AF_UNIX); s.settimeout(5); s.connect(sys.argv[1]); f = s.makefile('rw'); f.readline()
+for c in ({"execute": "qmp_capabilities"}, {"execute": "quit"}):
+    f.write(json.dumps(c) + "\n"); f.flush(); f.readline()
+PY
+}
+runner1() {   # $1 payload $2 outdir
+  local log="$2.runner.log" t0="" now
+  mkdir -p "$2"; : > "$log"
+  "$RUNNER" "$1" "$2" > "$log" 2>&1 &
+  local pid=$!
+  while kill -0 $pid 2>/dev/null; do
+    sleep 5
+    if [ -z "$t0" ]; then grep -q "lock held" "$log" && t0=$(date +%s); continue; fi
+    now=$(date +%s)
+    if [ ! -s "$2/serial.log" ] && [ $((now - t0)) -gt "${SILENT_S:-240}" ]; then
+      echo "vm_run: no serial output ${SILENT_S:-240}s after boot start: stopping the hung guest" >&2
+      qmp_quit "$2/qmp.sock"; echo HUNG > "$2/hung"; break
+    fi
+  done
+  wait $pid || true
+  tail -1 "$log"
+}
+runner() {   # $1 payload $2 outdir; env passes through; one retry for a hung (silent) boot
+  runner1 "$1" "$2"
+  if [ -f "$2/hung" ]; then
+    echo "vm_run: retrying the boot once" >&2
+    if [ -n "${W10_OVERLAY:-}" ]; then echo "vm_run: (reusing overlay $W10_OVERLAY)" >&2; fi
+    mv "$2" "$2.hung"; [ -f "$2.runner.log" ] && mv "$2.runner.log" "$2.hung/runner.log"
+    runner1 "$1" "$2"
+  fi
+}
 boot() {   # $1 = payload, $2 = outdir (serial.log)
   local t="${ORACLE_TIMEOUT:-900}"
   if [ "$MODE" = reboot ]; then
     echo "== boot 1/2 (apply $CONFIG, reboot mode)"
-    ORACLE_TIMEOUT=300 W10_KEEPDISK=1 "$RUNNER" "$1" "$2.stage1" | tail -1
+    ORACLE_TIMEOUT=300 W10_KEEPDISK=1 runner "$1" "$2.stage1"
     [ -f "$2.stage1/disk.qcow2" ] || { echo "vm_run: stage-1 overlay missing" >&2; return 1; }
     echo "== boot 2/2"
-    ORACLE_TIMEOUT="$t" W10_OVERLAY="$2.stage1/disk.qcow2" "$RUNNER" "$1" "$2" | tail -1
+    ORACLE_TIMEOUT="$t" W10_OVERLAY="$2.stage1/disk.qcow2" runner "$1" "$2"
     cat "$2.stage1/serial.log" "$2/serial.log" > "$2/serial.all"
     rm -f "$2.stage1/disk.qcow2"
   else
-    ORACLE_TIMEOUT="$t" "$RUNNER" "$1" "$2" | tail -1
+    ORACLE_TIMEOUT="$t" runner "$1" "$2"
     cp "$2/serial.log" "$2/serial.all"
   fi
 }

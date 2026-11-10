@@ -23,7 +23,7 @@ IFS=',' read -r -a CFG <<< "$CONFIGS"
 worst=0; DIRS=()
 for c in "${CFG[@]}"; do
   n="${c%@*}"; d="$ROOT/results/win10"; [ "$n" = aero ] || d="$ROOT/results/win10-$n"
-  echo "######## config $c"
+  echo "######## config $c"; rm -f "$d/_summary.txt"
   "$ROOT/tools/vm_run.sh" --config "$c" --out "$d" "${ARGS[@]}"; r=$?
   [ $r -gt $worst ] && worst=$r
   DIRS+=("$c=$d")
