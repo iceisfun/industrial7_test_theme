@@ -1,0 +1,13 @@
+== /home/iceisfun/w10lab/runs/theme-1109-171001-830771/serial.combined
+__env                        OK         0x0         55ms 
+__env_v5                     OK         0x0         67ms 
+core_smoke                   OK         0x0         40ms tests=3 failed=0 skipped=0 checks_fail=0
+probe_1_log                  OK         0x0         546ms 
+probe_1.csv                  OK         0x0         36621ms 
+probe_2_log                  OK         0x0         138ms 
+probe_2.csv                  OK         0x0         7428ms 
+boot: DONE marker seen
+  I7VM: logon Mon 11/09/2026 16:22:48.13 
+  I7VM: payload D:\i7run 
+  @@I7 CFG run config=aero mode=none Mon 11/09/2026 16:22:48.16 
+  I7VM: payload exit 0 

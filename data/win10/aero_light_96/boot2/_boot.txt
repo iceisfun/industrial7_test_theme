@@ -1,0 +1,6 @@
+== /home/iceisfun/w10lab/runs/theme-1109-171001-830771/serial.combined
+I7VM: logon Mon 11/09/2026 16:22:48.13 
+I7VM: payload D:\i7run 
+@@I7 CFG run config=aero mode=none Mon 11/09/2026 16:22:48.16 
+@@I7 DONE 16:23:33.24 
+I7VM: payload exit 0 
