@@ -96,7 +96,9 @@ make_payload() {   # $1 = payload dir, $2 = probes? (1/0), rest = exe paths
       "$ROOT/tools/theme_config.sh" cmd "$CONFIG"
       echo "echo done > C:\\i7state\\cfg_$CNAME.done"
       case "$MODE" in
-        logoff) echo 'echo @@I7 CFG logoff > COM1'; echo 'shutdown /l /f'
+        logoff) echo 'rem AutoAdminLogon alone logs on only at boot; ForceAutoLogon=1 makes winlogon log on again after a logoff'
+                echo 'reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v ForceAutoLogon /t REG_SZ /d 1 /f > COM1 2>&1'
+                echo 'echo @@I7 CFG logoff > COM1'; echo 'shutdown /l /f'
                 echo 'rem the logoff kills this script; block so the hook does not power off first'
                 echo 'ping -n 300 127.0.0.1 > nul'; echo 'exit /b 0';;
         reboot) echo 'echo @@I7 CFG reboot-pending > COM1'; echo 'exit /b 0';;

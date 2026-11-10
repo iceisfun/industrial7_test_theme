@@ -1,0 +1,98 @@
+@@I7 BEGIN __env "themeenv6.exe"
+ENV SessionId=1
+ENV ActiveConsoleSessionId=1
+ENV WindowStation=WinSta0
+ENV ThreadDesktop=Default
+ENV InputDesktop=Default
+ENV UserName=Administrator
+ENV UptimeMs=35390
+ENV Processes=explorer=1 dwm=1 logonui=0
+ENV Service.Themes=state=1 (4=running 1=stopped)
+ENV LOGPIXELSX=96
+ENV GetDpiForSystem=96
+ENV Screen=1024x768 bpp=32
+ENV SM_CYEDGE=2
+ENV HighContrast=flags=0x7E on=0 scheme=""
+ENV HKCU.AppsUseLightTheme=0x1
+ENV HKCU.SystemUsesLightTheme=0x1
+ENV HKCU.Themes.CurrentTheme="C:\Windows\resources\Themes\light.theme"
+ENV HKCU.ThemeManager.ThemeActive="1"
+ENV HKCU.ThemeManager.DllName="%SystemRoot%\resources\themes\Aero\Aero.msstyles"
+ENV HKLM.Themes.InstallTheme="C:\Windows\resources\Themes\aero.theme"
+ENV HKCU.Desktop.LogPixels=(absent)
+ENV HKCU.Desktop.Win8DpiScaling=0x0
+ENV HKCU.WindowMetrics.AppliedDPI=0x60
+ENV HKCU.HighContrast.Flags="126"
+ENV IsThemeActive=1
+ENV IsAppThemed=1
+ENV IsCompositionActive=1
+ENV GetThemeAppProperties=0x3
+ENV GetCurrentThemeName=hr=0x00000000 file="C:\Windows\resources\themes\Aero\Aero.msstyles" color="NormalColor" size="NormalSize"
+ENV ShouldAppsUseDarkMode.132=0
+ENV ShouldSystemUseDarkMode.138=0
+ENV OpenThemeData.Header=nonnull err=0
+ENV HP_HEADERITEM.TS_TRUE.nulldc=hr=0x00000000 cx=6 cy=24
+ENV HP_HEADERITEM.TS_TRUE.screendc=hr=0x00000000 cx=6 cy=24
+ENV HP_HEADERITEM.state0.TS_TRUE=hr=0x00000000 cx=6 cy=24
+ENV HP_HEADERITEM.TMT_MINSIZE=hr=0x80070490 x=-1 y=-1
+ENV TopWindow=ok
+ENV default.comctl32.path=C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll
+ENV default.comctl32.filever=6.10.19041.1110
+ENV default.comctl32.DllGetVersion=hr=0x00000000 6.16.10586
+ENV default.header=layout_ret=1 cy=24 cx=400 window_theme=nonnull
+ENV default.header.segoe9=cy=24
+ENVDONE
+
+@@I7 END __env exit=0x0 ms=52 timeout=0 bytes=1836
+@@I7 BEGIN __env_v5 "themeenv.exe" --actctx C:\i7w\ctl6.manifest
+ENV SessionId=1
+ENV ActiveConsoleSessionId=1
+ENV WindowStation=WinSta0
+ENV ThreadDesktop=Default
+ENV InputDesktop=Default
+ENV UserName=Administrator
+ENV UptimeMs=35453
+ENV Processes=explorer=1 dwm=1 logonui=0
+ENV Service.Themes=state=1 (4=running 1=stopped)
+ENV LOGPIXELSX=96
+ENV GetDpiForSystem=96
+ENV Screen=1024x768 bpp=32
+ENV SM_CYEDGE=2
+ENV HighContrast=flags=0x7E on=0 scheme=""
+ENV HKCU.AppsUseLightTheme=0x1
+ENV HKCU.SystemUsesLightTheme=0x1
+ENV HKCU.Themes.CurrentTheme="C:\Windows\resources\Themes\light.theme"
+ENV HKCU.ThemeManager.ThemeActive="1"
+ENV HKCU.ThemeManager.DllName="%SystemRoot%\resources\themes\Aero\Aero.msstyles"
+ENV HKLM.Themes.InstallTheme="C:\Windows\resources\Themes\aero.theme"
+ENV HKCU.Desktop.LogPixels=(absent)
+ENV HKCU.Desktop.Win8DpiScaling=0x0
+ENV HKCU.WindowMetrics.AppliedDPI=0x60
+ENV HKCU.HighContrast.Flags="126"
+ENV IsThemeActive=1
+ENV IsAppThemed=1
+ENV IsCompositionActive=1
+ENV GetThemeAppProperties=0x3
+ENV GetCurrentThemeName=hr=0x00000000 file="C:\Windows\resources\themes\Aero\Aero.msstyles" color="NormalColor" size="NormalSize"
+ENV ShouldAppsUseDarkMode.132=0
+ENV ShouldSystemUseDarkMode.138=0
+ENV OpenThemeData.Header=nonnull err=0
+ENV HP_HEADERITEM.TS_TRUE.nulldc=hr=0x00000000 cx=6 cy=24
+ENV HP_HEADERITEM.TS_TRUE.screendc=hr=0x00000000 cx=6 cy=24
+ENV HP_HEADERITEM.state0.TS_TRUE=hr=0x00000000 cx=6 cy=24
+ENV HP_HEADERITEM.TMT_MINSIZE=hr=0x80070490 x=-1 y=-1
+ENV TopWindow=ok
+ENV default.comctl32.path=C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.19041.1110_none_792d1c772443f647\comctl32.dll
+ENV default.comctl32.filever=5.82.19041.1110
+ENV default.comctl32.DllGetVersion=hr=0x00000000 5.82.10586
+ENV default.header=layout_ret=1 cy=17 cx=400 window_theme=NULL
+ENV default.header.segoe9=cy=19
+ENV actctx=active
+ENV actctx.comctl32.path=C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll
+ENV actctx.comctl32.filever=6.10.19041.1110
+ENV actctx.comctl32.DllGetVersion=hr=0x00000000 6.16.10586
+ENV actctx.header=layout_ret=1 cy=24 cx=400 window_theme=nonnull
+ENV actctx.header.segoe9=cy=24
+ENVDONE
+
+@@I7 END __env_v5 exit=0x0 ms=66 timeout=0 bytes=2207

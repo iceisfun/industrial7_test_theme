@@ -20,12 +20,12 @@ DESK='HKCU\Control Panel\Desktop'
 
 # name | default mode | expect | description
 CONFIGS='aero|none|themed|Aero light (base image default: aero.msstyles NormalColor, light apps+system, 96 dpi, 1024x768)
-dark|runtime|themed|Windows 10 dark: AppsUseLightTheme=0 SystemUsesLightTheme=0 + WM_SETTINGCHANGE ImmersiveColorSet
+dark|runtime|themed|AppsUseLightTheme=0 SystemUsesLightTheme=0 + WM_SETTINGCHANGE ImmersiveColorSet (ord 132/138 -> 1)
 light|runtime|themed|explicit light: AppsUseLightTheme=1 SystemUsesLightTheme=1 + WM_SETTINGCHANGE ImmersiveColorSet
-hc|runtime|themed|high contrast on (SPI_SETHIGHCONTRAST HCF_HIGHCONTRASTON, scheme High Contrast Black)
+hc|runtime|themed|high contrast on (SPI_SETHIGHCONTRAST, High Contrast Black): theme becomes AeroLite.msstyles, header 17
 hcwhite|runtime|themed|high contrast on, scheme High Contrast White
-classic|runtime|unthemed|visual styles off: sc stop Themes (Themes service stopped for the session)
-classic_disabled|reboot|unthemed|Themes service start=disabled, then reboot (no theme from logon on)
+classic|runtime|themed|sc stop Themes. VERIFIED: does NOT unthemed Win10 (IsThemeActive stays 1, Aero.msstyles, header 24)
+classic_disabled|reboot|themed|Themes start=disabled + reboot. VERIFIED: still themed (IsThemeActive 1); kept as a negative result
 dpi96|logoff|themed|LogPixels=96 Win8DpiScaling=1
 dpi120|logoff|themed|LogPixels=120 Win8DpiScaling=1 (125%)
 dpi144|logoff|themed|LogPixels=144 Win8DpiScaling=1 (150%)
@@ -50,8 +50,11 @@ cmd_of() {
       echo "reg add \"$PERS\" /v AppsUseLightTheme /t REG_DWORD /d $v /f > COM1 2>&1"
       echo "reg add \"$PERS\" /v SystemUsesLightTheme /t REG_DWORD /d $v /f > COM1 2>&1"
       echo "themeset.exe broadcast ImmersiveColorSet > COM1 2>&1";;
-    hc) echo "themeset.exe hc on \"High Contrast Black\" > COM1 2>&1";;
-    hcwhite) echo "themeset.exe hc on \"High Contrast White\" > COM1 2>&1";;
+    hc|hcwhite)
+      local sch="High Contrast Black"; [ "$n" = hcwhite ] && sch="High Contrast White"
+      echo "themeset.exe hc on \"$sch\" > COM1 2>&1"
+      echo "rem the switch completes asynchronously (processes started within ~1 s still saw Aero metrics): settle"
+      echo "ping -n 11 127.0.0.1 > nul";;
     classic) echo "sc stop Themes > COM1 2>&1"; echo "ping -n 4 127.0.0.1 > nul"; echo "sc query Themes > COM1 2>&1";;
     classic_disabled) echo "sc config Themes start= disabled > COM1 2>&1"; echo "sc stop Themes > COM1 2>&1";;
     dpi96) dpi_cmd 96;; dpi120) dpi_cmd 120;; dpi144) dpi_cmd 144;; dpi192) dpi_cmd 192;;

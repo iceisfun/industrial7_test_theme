@@ -138,6 +138,10 @@ static void session_report(void)
     if (in) { GetUserObjectInformationA(in, UOI_NAME, n, sizeof n, &l); CloseDesktop(in); P("InputDesktop", "%s", n); } else P("InputDesktop", "OPENFAIL err=%lu", GetLastError());
     l = sizeof n; n[0] = 0; GetUserNameA(n, &l); P("UserName", "%s", n);
     P("UptimeMs", "%lu", GetTickCount());
+    { HANDLE tk; TOKEN_ELEVATION el = {0}; TOKEN_ELEVATION_TYPE et = 0; DWORD r;
+      if (OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY, &tk)) {
+        GetTokenInformation(tk, TokenElevation, &el, sizeof el, &r); GetTokenInformation(tk, TokenElevationType, &et, sizeof et, &r);
+        P("TokenElevation", "elevated=%lu type=%d (1=default 2=full 3=limited)", el.TokenIsElevated, (int)et); CloseHandle(tk); } }
     /* explorer / dwm / winlogon presence */
     HANDLE snap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0); PROCESSENTRY32 pe = { sizeof pe };
     int ex = 0, dwm = 0, logonui = 0;
