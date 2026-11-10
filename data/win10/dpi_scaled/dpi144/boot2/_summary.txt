@@ -1,0 +1,29 @@
+== /home/iceisfun/w10lab/runs/theme-1110-052905-1856433/serial.combined
+__env                        OK         0x0         59ms 
+__env_v5                     OK         0x0         53ms 
+filehash                     NOSUMMARY  0x0         70ms 
+probe_draw                   OK         0x0         5984ms 
+probe_draw_nomanifest        OK         0x0         6051ms 
+probe_1_log                  OK         0x0         537ms 
+probe_1.csv                  OK         0x0         36404ms 
+probe_2_log                  OK         0x0         451ms 
+probe_2.csv                  OK         0x0         35925ms 
+probe_3_log                  OK         0x0         122ms 
+probe_3.csv                  OK         0x0         5257ms 
+probe_4_log                  OK         0x0         124ms 
+probe_4.csv                  OK         0x0         5368ms 
+probe_5_log                  OK         0x0         144ms 
+probe_5.csv                  OK         0x0         7661ms 
+probe_6_log                  OK         0x0         137ms 
+probe_6.csv                  OK         0x0         7456ms 
+boot: DONE marker seen
+  I7VM: logon Tue 11/10/2026  6:16:25.44 
+  I7VM: payload D:\i7run 
+  @@I7 CFG run config=dpi144 mode=logoff Tue 11/10/2026  6:16:25.47 
+  @@I7 CFG apply dpi144  6:16:25.51 
+  @@I7 CFG logoff 
+  I7VM: logon Tue 11/10/2026  6:16:40.54 
+  I7VM: payload D:\i7run 
+  @@I7 CFG run config=dpi144 mode=logoff Tue 11/10/2026  6:16:40.57 
+  @@I7 CFG active dpi144  6:16:40.59 
+  I7VM: payload exit 0 

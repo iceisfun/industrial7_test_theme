@@ -1,0 +1,15 @@
+== /home/iceisfun/w10lab/runs/theme-1110-050208-1760429/serial.combined
+I7VM: logon Tue 11/10/2026  4:26:23.69 
+I7VM: payload D:\i7run 
+@@I7 CFG run config=dpi120 mode=logoff Tue 11/10/2026  4:26:23.72 
+@@I7 CFG apply dpi120  4:26:23.74 
+The operation completed successfully.
+The operation completed successfully.
+The operation completed successfully.
+@@I7 CFG logoff 
+I7VM: logon Tue 11/10/2026  4:26:36.08 
+I7VM: payload D:\i7run 
+@@I7 CFG run config=dpi120 mode=logoff Tue 11/10/2026  4:26:36.11 
+@@I7 CFG active dpi120  4:26:36.13 
+@@I7 DONE  4:28:31.44 
+I7VM: payload exit 0 

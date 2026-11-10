@@ -82,7 +82,7 @@ make_payload() {   # $1 = payload dir, $2 = probes? (1/0), rest = exe paths
   cp "$ROOT"/build/vm/{vmrun.exe,themeenv.exe,themeenv6.exe,themeset.exe,ctl6.manifest} "$pay/"
   local names=() e n
   for e in "$@"; do cp "$e" "$pay/"; n="$(basename "$e")"; names+=("$n"); done
-  if [ "$withprobe" = 1 ]; then cp "$ROOT/build/probe_record.exe" "$ROOT/build/probe_table.csv" "$pay/"; fi
+  if [ "$withprobe" = 1 ]; then cp "$ROOT/build/probe_record.exe" "$ROOT/build/probe_table.csv" "$pay/"; [ -f "$ROOT/tools/probe_table_dpi.csv" ] && cp "$ROOT/tools/probe_table_dpi.csv" "$pay/"; fi
   {
     echo '@echo off'
     echo 'setlocal'
@@ -109,7 +109,7 @@ make_payload() {   # $1 = payload dir, $2 = probes? (1/0), rest = exe paths
     echo 'if not exist %W% mkdir %W%'
     echo 'xcopy /y /q *.exe %W%\ > nul'
     echo 'xcopy /y /q *.manifest %W%\ > nul'
-    [ "$withprobe" = 1 ] && echo 'xcopy /y /q probe_table.csv %W%\ > nul'
+    [ "$withprobe" = 1 ] && echo 'xcopy /y /q probe_table*.csv %W%\ > nul'
     echo 'cd /d %W%'
     if [ "$GATE" = 1 ] && [ "$EXPECT" = themed ]; then
       echo 'vmrun.exe -t 200 -n __env -- themeenv6.exe --wait 150'

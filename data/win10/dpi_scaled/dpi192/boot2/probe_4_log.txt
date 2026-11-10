@@ -1,0 +1,4 @@
+@@I7 BEGIN probe_4_log "C:\i7w\probe_record.exe" --table C:\i7w\probe_table.csv --label dpi192_unaware_dpitable --table C:\i7w\probe_table_dpi.csv --prio 3 --sweep std --dpi-aware unaware --out C:\i7w\probe_4.csv
+done: C:\i7w\probe_4.csv
+
+@@I7 END probe_4_log exit=0x0 ms=119 timeout=0 bytes=26
