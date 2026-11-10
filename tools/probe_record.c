@@ -38,6 +38,7 @@ typedef HTHEME  (WINAPI *fOpen)(HWND, LPCWSTR);
 typedef HTHEME  (WINAPI *fOpenDpi)(HWND, LPCWSTR, UINT);
 typedef HTHEME  (WINAPI *fOpenEx)(HWND, LPCWSTR, DWORD);
 typedef HRESULT (WINAPI *fClose)(HTHEME);
+typedef HRESULT (WINAPI *fDrawBg)(HTHEME, HDC, int, int, LPCRECT, LPCRECT);
 typedef HRESULT (WINAPI *fPartSize)(HTHEME, HDC, int, int, LPCRECT, int, SIZE *);
 typedef HRESULT (WINAPI *fInt)(HTHEME, int, int, int, int *);
 typedef HRESULT (WINAPI *fMetric)(HTHEME, HDC, int, int, int, int *);
@@ -77,7 +78,7 @@ typedef struct { DWORD cbSize, dwMajorVersion, dwMinorVersion, dwBuildNumber, dw
 typedef HRESULT (WINAPI *fDllGetVersion)(DLLVER *);
 
 static struct {
-    fOpen Open; fOpenDpi OpenDpi; fOpenEx OpenEx; fOpen OpenNc; fClose Close;
+    fDrawBg DrawBg; fOpen Open; fOpenDpi OpenDpi; fOpenEx OpenEx; fOpen OpenNc; fClose Close;
     fPartSize PartSize; fInt Int; fMetric Metric; fBool Bool; fInt Enum; fColor Color; fMargins Margins; fPos Pos; fRect Rect;
     fFont Font; fStr Str; fStr File; fIntList IntList; fOrigin Origin; fRectOut Content; fRectOut Extent; fTextExt TextExt; fTextMet TextMet;
     fDefined Defined; fTransp Transp; fRegion Region; fTrans Trans;
@@ -348,6 +349,34 @@ static void h_Content(Ctx *c)   /* ContentRect / Extent */
     hr = (!strcmp(c->api, "GetThemeBackgroundExtent") ? X.Extent : X.Content)(c->h, pickdc(c->aux, 1), c->part, c->state, &in, NOOUT(c) ? NULL : &out);
     emit_hr("", hr, GetLastError(), 4, out.left, out.top, out.right, out.bottom, "");
 }
+
+/* DrawThemeBackground into a small top-down 32bpp DIB prefilled with 0x00FF00FF (aux size=w:h, optional dump=1 -> raw BGRA hex
+ * of the whole bitmap in txt, only for w*h <= 100).  v0 = FNV-1a of the greyscale ((299R+587G+114B)/1000) bytes,
+ * v1 = pixels differing from the fill, v2 = pixels with alpha != 0, v3 = centre pixel 0xAARRGGBB (as signed long),
+ * v4 = top-left pixel, v5 = bottom-right pixel.  txt = 'grey=<hex of up to 32 evenly spaced greyscale samples>[ raw=<hex>]' */
+static void h_Draw(Ctx *c)
+{
+    int w = 32, h = 24, dump = (int)aux_int(c->aux, "dump", 0), x, y, n; char sz[64]; BITMAPINFO bi; void *bits = NULL; HBITMAP bm, old; HRESULT hr;
+    unsigned long hash = 2166136261u; long changed = 0, alpha = 0, v[6]; DWORD *px; RECT rc; char t[1200]; size_t o = 0;
+    if (aux_find(c->aux, "size", sz, sizeof sz)) sscanf(sz, "%d:%d", &w, &h);
+    memset(&bi, 0, sizeof bi); bi.bmiHeader.biSize = sizeof bi.bmiHeader; bi.bmiHeader.biWidth = w; bi.bmiHeader.biHeight = -h;
+    bi.bmiHeader.biPlanes = 1; bi.bmiHeader.biBitCount = 32; bi.bmiHeader.biCompression = BI_RGB;
+    bm = CreateDIBSection(g_dc, &bi, DIB_RGB_COLORS, &bits, NULL, 0);
+    if (!bm) { em("", "NODIB", GetLastError(), 0, "CreateDIBSection"); return; }
+    px = bits; for (n = 0; n < w * h; n++) px[n] = 0x00FF00FF;
+    old = SelectObject(g_mdc, bm); SetRect(&rc, 0, 0, w, h); SetLastError(0x5A5A5A5A);
+    hr = X.DrawBg(c->h, g_mdc, c->part, c->state, &rc, NULL); { DWORD le = GetLastError(); GdiFlush();
+    for (n = 0; n < w * h; n++) {
+        DWORD p = px[n]; unsigned r = (p >> 16) & 255, g = (p >> 8) & 255, b = p & 255; unsigned gr = (299 * r + 587 * g + 114 * b) / 1000;
+        hash = (hash ^ gr) * 16777619u; if (p != 0x00FF00FF) changed++; if (p >> 24) alpha++;
+    }
+    v[0] = (long)hash; v[1] = changed; v[2] = alpha; v[3] = (long)px[(h / 2) * w + w / 2]; v[4] = (long)px[0]; v[5] = (long)px[w * h - 1];
+    o += snprintf(t + o, sizeof t - o, "grey=");
+    for (n = 0; n < 32; n++) { DWORD p = px[(n * (w * h - 1)) / 31]; unsigned gr = (299 * ((p >> 16) & 255) + 587 * ((p >> 8) & 255) + 114 * (p & 255)) / 1000; o += snprintf(t + o, sizeof t - o, "%02x", gr); }
+    if (dump && w * h <= 100) { o += snprintf(t + o, sizeof t - o, " raw="); for (n = 0; n < w * h; n++) o += snprintf(t + o, sizeof t - o, "%08lx", (unsigned long)px[n]); }
+    (void)x; (void)y; emit("", HR(hr), le, 0, 6, v, t); }
+    SelectObject(g_mdc, old); DeleteObject(bm);
+}
 static void h_TextExtent(Ctx *c)
 {
     char t[128] = "M", fl[32]; DWORD flags = 0; RECT b, ext = {SENT, SENT, SENT, SENT}, *pb = NULL; HRESULT hr; HDC dc = textdc(c->aux);
@@ -381,6 +410,7 @@ static void h_Transition(Ctx *c)
     DWORD d = SENT; HRESULT hr; int to = (int)aux_int(c->aux, "to", 1); SetLastError(0x5A5A5A5A);
     hr = X.Trans(c->h, c->part, c->state, to, c->prop, NOOUT(c) ? NULL : &d); emit_hr("", hr, GetLastError(), 1, (long)d, 0, 0, 0, "");
 }
+
 
 /* ---------------------------------------------------------------- GetThemeSys* (prop = id; class "-" = NULL theme) */
 static void h_Sys(Ctx *c)
@@ -736,7 +766,7 @@ static const Api APIS[] = {
     {"GetThemeIntList", h_IntList, 1}, {"GetThemePropertyOrigin", h_Origin, 1}, {"GetThemeBackgroundContentRect", h_Content, 1},
     {"GetThemeBackgroundExtent", h_Content, 1}, {"GetThemeTextExtent", h_TextExtent, 1}, {"GetThemeTextMetrics", h_TextMetrics, 1},
     {"IsThemePartDefined", h_Defined, 1}, {"IsThemeBackgroundPartiallyTransparent", h_Defined, 1}, {"GetThemeBackgroundRegion", h_Region, 1},
-    {"GetThemeTransitionDuration", h_Transition, 1},
+    {"GetThemeTransitionDuration", h_Transition, 1}, {"DrawThemeBackground", h_Draw, 1},
     {"GetThemeSysColor", h_Sys, 1}, {"GetThemeSysColorBrush", h_Sys, 1}, {"GetThemeSysSize", h_Sys, 1}, {"GetThemeSysBool", h_Sys, 1},
     {"GetThemeSysInt", h_Sys, 1}, {"GetThemeSysFont", h_Sys, 1}, {"GetThemeSysString", h_Sys, 1},
     {"PropSweep", h_PropSweep, 1}, {"PartGrid", h_PartGrid, 1}, {"PropGrid", h_PropGrid, 1},
@@ -832,7 +862,7 @@ static int child_main(void)
     hUx = LoadLibraryW(L"uxtheme.dll"); hCc = LoadLibraryW(L"comctl32.dll");
     if (!hUx || !hCc) { fprintf(stderr, "LoadLibrary uxtheme/comctl32 failed\n"); return 2; }
 #define L_(f, n) X.f = (void *)GetProcAddress(hUx, n)
-    L_(Open, "OpenThemeData"); L_(OpenDpi, "OpenThemeDataForDpi"); L_(OpenEx, "OpenThemeDataEx"); X.OpenNc = (void *)GetProcAddress(hUx, MAKEINTRESOURCEA(49)); L_(Close, "CloseThemeData");
+    L_(DrawBg, "DrawThemeBackground"); L_(Open, "OpenThemeData"); L_(OpenDpi, "OpenThemeDataForDpi"); L_(OpenEx, "OpenThemeDataEx"); X.OpenNc = (void *)GetProcAddress(hUx, MAKEINTRESOURCEA(49)); L_(Close, "CloseThemeData");
     L_(PartSize, "GetThemePartSize"); L_(Int, "GetThemeInt"); L_(Metric, "GetThemeMetric"); L_(Bool, "GetThemeBool"); L_(Enum, "GetThemeEnumValue");
     L_(Color, "GetThemeColor"); L_(Margins, "GetThemeMargins"); L_(Pos, "GetThemePosition"); L_(Rect, "GetThemeRect"); L_(Font, "GetThemeFont");
     L_(Str, "GetThemeString"); L_(File, "GetThemeFilename"); L_(IntList, "GetThemeIntList"); L_(Origin, "GetThemePropertyOrigin");

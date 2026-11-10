@@ -241,6 +241,11 @@ def part_rows(cls, grp, partname, pn, states, prio, dpis, nc=0, mode="lean"):
         A("IsThemePartDefined", st)
     A("IsThemeBackgroundPartiallyTransparent", first)
     A("GetThemeBackgroundContentRect", first, [0] + (list(dpis) if mode != "min" else []), aux=RECT_STD)
+    # DrawThemeBackground into DIBs (pixel hashes; tiny raw dump for the first state)
+    for st in (states if states else [z]):
+        if mode == "min" and st is not first: continue
+        A("DrawThemeBackground", st, aux="size=32:24", propname="draw32x24")
+    A("DrawThemeBackground", first, aux="size=8:8;dump=1", propname="draw8x8raw")
     if mode == "min":
         A("GetThemeMargins", first, prop=3602, propname="TMT_CONTENTMARGINS")
         return

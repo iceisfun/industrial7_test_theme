@@ -3,34 +3,34 @@
 | env | 9 | 9 | 0 | 0 | 0 |
 | open | 197 | 0 | 10 | 187 | 0 |
 | err | 133 | 0 | 21 | 94 | 18 |
-| header | 869 | 45 | 805 | 19 | 0 |
-| button | 408 | 0 | 385 | 23 | 0 |
-| tab | 616 | 0 | 609 | 7 | 0 |
-| listview | 378 | 0 | 345 | 33 | 0 |
-| treeview | 262 | 0 | 255 | 7 | 0 |
-| toolbar | 132 | 0 | 83 | 49 | 0 |
-| rebar | 302 | 0 | 276 | 26 | 0 |
-| progress | 275 | 0 | 217 | 58 | 0 |
-| trackbar | 532 | 0 | 510 | 22 | 0 |
-| spin | 276 | 0 | 269 | 7 | 0 |
-| edit | 308 | 0 | 255 | 53 | 0 |
-| combobox | 131 | 0 | 73 | 58 | 0 |
-| scrollbar | 443 | 0 | 407 | 36 | 0 |
-| status | 147 | 0 | 140 | 7 | 0 |
-| tooltip | 358 | 0 | 334 | 24 | 0 |
-| window | 496 | 0 | 409 | 87 | 0 |
-| menu | 82 | 0 | 0 | 82 | 0 |
-| listbox | 43 | 0 | 0 | 43 | 0 |
-| monthcal | 119 | 0 | 59 | 60 | 0 |
-| datepicker | 185 | 0 | 178 | 7 | 0 |
+| header | 904 | 45 | 840 | 19 | 0 |
+| button | 438 | 0 | 411 | 27 | 0 |
+| tab | 647 | 0 | 640 | 7 | 0 |
+| listview | 403 | 0 | 360 | 43 | 0 |
+| treeview | 277 | 0 | 270 | 7 | 0 |
+| toolbar | 151 | 0 | 90 | 61 | 0 |
+| rebar | 318 | 0 | 288 | 30 | 0 |
+| progress | 302 | 0 | 228 | 74 | 0 |
+| trackbar | 561 | 0 | 535 | 26 | 0 |
+| spin | 292 | 0 | 285 | 7 | 0 |
+| edit | 336 | 0 | 273 | 63 | 0 |
+| combobox | 150 | 0 | 78 | 72 | 0 |
+| scrollbar | 476 | 0 | 432 | 44 | 0 |
+| status | 153 | 0 | 146 | 7 | 0 |
+| tooltip | 380 | 0 | 352 | 28 | 0 |
+| window | 537 | 0 | 430 | 107 | 0 |
+| menu | 102 | 0 | 0 | 102 | 0 |
+| listbox | 53 | 0 | 0 | 53 | 0 |
+| monthcal | 141 | 0 | 61 | 80 | 0 |
+| datepicker | 191 | 0 | 184 | 7 | 0 |
 | static | 12 | 0 | 5 | 7 | 0 |
-| link | 16 | 0 | 0 | 16 | 0 |
-| textstyle | 53 | 0 | 0 | 53 | 0 |
+| link | 18 | 0 | 0 | 18 | 0 |
+| textstyle | 71 | 0 | 0 | 71 | 0 |
 | globals | 12 | 0 | 0 | 12 | 0 |
 | sys | 327 | 0 | 198 | 129 | 0 |
 | ctl | 32 | 0 | 31 | 1 | 0 |
 | gridfull | 24 | 0 | 0 | 0 | 24 |
-| **total** | 7177 | 54 | 5874 | 1207 | 42 |
+| **total** | 7647 | 54 | 6168 | 1383 | 42 |
 
 | api | rows |
 |---|---|
@@ -38,6 +38,7 @@
 | GetThemeMargins | 719 |
 | GetThemeBackgroundContentRect | 502 |
 | IsThemePartDefined | 488 |
+| DrawThemeBackground | 470 |
 | GetThemeInt | 370 |
 | GetThemeMetric | 338 |
 | GetThemeEnumValue | 273 |
